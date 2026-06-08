@@ -10,8 +10,7 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "vitest run",
     "seed": "cd database && npm run seed",
-    "prisma:generate": "npx prisma generate --schema=database/prisma/schema.prisma",
-    "postinstall": "npx prisma generate --schema=database/prisma/schema.prisma"
+    "prisma:generate": "npx prisma generate --schema=database/prisma/schema.prisma"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
