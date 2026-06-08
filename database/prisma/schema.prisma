@@ -1,0 +1,2168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  OWNER
+  ADMIN
+  MANAGER
+  ANALYST
+  VIEWER
+}
+
+enum PlatformRole {
+  USER
+  SUPER_ADMIN
+}
+
+enum BillingPlan {
+  FREE
+  PRO
+  PREMIUM
+  AGENCY
+  ENTERPRISE
+}
+
+enum JobStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum SuggestionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  EXPIRED
+  TRACKED
+}
+
+enum PromptIntentCategory {
+  HIGH_INTENT
+  COMPARISON
+  COMMERCIAL
+  INFORMATIONAL
+}
+
+enum CitationSourceType {
+  MEDIA
+  ANALYST
+  GOVERNMENT
+  STANDARD
+  VENDOR
+  MARKETPLACE
+  COMMUNITY
+  ACADEMIC
+  OTHER
+}
+
+enum CitationOpportunityStatus {
+  OPEN
+  IN_PROGRESS
+  WON
+  DISMISSED
+}
+
+enum GeoInsightType {
+  THREAT
+  VISIBILITY_OPPORTUNITY
+  QUICK_WIN
+  LOST_REVENUE
+  BENCHMARK
+  CONTENT_GAP
+  ACTION_PLAN
+  CITATION_OPPORTUNITY
+}
+
+enum GeoInsightStatus {
+  OPEN
+  ACTIONED
+  DISMISSED
+  INSUFFICIENT_DATA
+}
+
+enum ActionOutcomeStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  IGNORED
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String
+  fullName      String?
+  avatarUrl     String?
+  isActive      Boolean   @default(true)
+  platformRole  PlatformRole @default(USER)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  memberships   OrganizationMember[]
+  supportTickets SupportTicket[]
+  notifications Notification[]
+  assignedTickets SupportTicket[] @relation("AssignedSupportTickets")
+  auditLogs     AuditLog[] @relation("AuditActor")
+  impersonationAuditLogs AuditLog[] @relation("AuditTargetUser")
+  copilotInteractions GeoCopilotInteraction[]
+  assignedGeoTasks GeoTask[] @relation("GeoTaskOwner")
+  geoExecutionPackages GeoExecutionPackage[]
+}
+
+model Organization {
+  id               String    @id @default(uuid())
+  name             String
+  slug             String    @unique
+  billingPlan      BillingPlan @default(FREE)
+  status           String    @default("ACTIVE")
+  stripeCustomerId String?
+  logoUrl          String?
+  brandingColor    String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  members          OrganizationMember[]
+  brands           Brand[]
+  prompts          Prompt[]
+  jobs             Job[]
+  reports          Report[]
+  geoAudits        GeoAudit[]
+  subscriptions    Subscription[]
+  payments         Payment[]
+  customLimits     CustomLimits?
+  settings         OrganizationSettings?
+  featureFlags     FeatureFlag[]
+  supportTickets   SupportTicket[]
+  notifications     Notification[]
+  auditLogs        AuditLog[]
+  couponRedemptions CouponRedemption[]
+  agencyCopilotSummaries AgencyCopilotSummary[]
+  autonomousRuns   AutonomousRun[]
+  autonomousAlerts AutonomousAlert[]
+  clientHealthScores ClientHealthScore[]
+  geoOsStatusSnapshots GeoOsStatusSnapshot[]
+  sroAnalyses      SroAnalysis[]
+  geoExecutionAssets GeoExecutionAsset[]
+  geoExecutionPackages GeoExecutionPackage[]
+  cmsConnections   CmsConnection[]
+  cmsPublications  CmsPublication[]
+  geoOsInboxes     GeoOsInbox[]
+}
+
+model OrganizationMember {
+  id             String       @id @default(uuid())
+  role           Role         @default(VIEWER)
+  organizationId String
+  userId         String
+  createdAt      DateTime     @default(now())
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId])
+  @@index([userId])
+  @@index([organizationId, role])
+}
+
+model Brand {
+  id             String       @id @default(uuid())
+  organizationId String
+  name           String
+  websiteUrl     String?
+  industry       String?
+  country        String       @default("United States")
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  competitors    Competitor[]
+  competitorSuggestions CompetitorSuggestion[]
+  analytics      AnalyticsSnapshot[]
+  prompts        Prompt[]
+  promptSuggestions PromptSuggestion[]
+  reports        Report[]
+  geoAudits      GeoAudit[]
+  citationOpportunities CitationOpportunity[]
+  geoScoreSnapshots GeoScoreSnapshot[]
+  geoInsights    GeoInsight[]
+  intelligenceSnapshots IntelligenceSnapshot[]
+  intelligenceChanges IntelligenceChange[]
+  recommendationOutcomes RecommendationOutcome[]
+  entityAliases EntityAlias[]
+  geoResearchRuns GeoResearchRun[]
+  geoResearchItems GeoResearchItem[]
+  marketCoverageSnapshots MarketCoverageSnapshot[]
+  automatedAnalystSummaries AutomatedAnalystSummary[]
+  copilotInteractions GeoCopilotInteraction[]
+  geoActionPlans GeoActionPlan[]
+  geoTasks GeoTask[]
+  geoForecasts GeoForecast[]
+  competitorWarRoomSnapshots CompetitorWarRoomSnapshot[]
+  graphInfluenceSnapshots GraphInfluenceSnapshot[]
+  commandCenterSnapshots CommandCenterSnapshot[]
+  autonomousRuns AutonomousRun[]
+  autonomousAlerts AutonomousAlert[]
+  autonomousPrioritizationSnapshots AutonomousPrioritizationSnapshot[]
+  clientHealthScores ClientHealthScore[]
+  geoLearningOutcomes GeoLearningOutcome[]
+  geoOsStatusSnapshots GeoOsStatusSnapshot[]
+  sroAnalyses SroAnalysis[]
+  competitorPageAnalyses CompetitorPageAnalysis[]
+  geoExecutionAssets GeoExecutionAsset[]
+  geoExecutionPackages GeoExecutionPackage[]
+  cmsConnections CmsConnection[]
+  cmsPublications CmsPublication[]
+  roiImpactSnapshots RoiImpactSnapshot[]
+  geoOsInboxes GeoOsInbox[]
+
+  @@index([organizationId])
+  @@index([organizationId, name])
+}
+
+model Competitor {
+  id             String   @id @default(uuid())
+  brandId        String
+  name           String
+  websiteUrl     String?
+  createdAt      DateTime @default(now())
+
+  brand          Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  suggestions    CompetitorSuggestion[]
+  citationOpportunities CitationOpportunity[]
+  pageAnalyses   CompetitorPageAnalysis[]
+
+  @@index([brandId])
+}
+
+model CompetitorSuggestion {
+  id                   String           @id @default(uuid())
+  brandId              String
+  name                 String
+  websiteUrl           String?
+  description          String?
+  industry             String?
+  country              String?
+  confidenceScore      Float            @default(0)
+  evidence             Json?
+  sources              Json?
+  dataSource           String           @default("AI_PROVIDER")
+  status               SuggestionStatus @default(PENDING)
+  approvedCompetitorId String?
+  lastVerifiedAt       DateTime?
+  discoveredAt         DateTime         @default(now())
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
+
+  brand                Brand            @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  approvedCompetitor   Competitor?      @relation(fields: [approvedCompetitorId], references: [id], onDelete: SetNull)
+
+  @@unique([brandId, name])
+  @@index([brandId, status])
+  @@index([brandId, confidenceScore])
+}
+
+model Prompt {
+  id             String   @id @default(uuid())
+  organizationId String
+  brandId        String
+  queryText      String
+  frequency      String   @default("daily")
+  isActive       Boolean  @default(true)
+  lastRunAt      DateTime?
+  createdAt      DateTime @default(now())
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand          Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  responses      AiResponse[]
+  suggestions    PromptSuggestion[]
+  citationOpportunities CitationOpportunity[]
+  geoScoreSnapshots GeoScoreSnapshot[]
+
+  @@index([organizationId])
+  @@index([brandId])
+  @@index([organizationId, isActive])
+}
+
+model PromptSuggestion {
+  id                     String               @id @default(uuid())
+  brandId                String
+  queryText              String
+  category               PromptIntentCategory @default(INFORMATIONAL)
+  intentScore            Float                @default(0)
+  opportunityScore       Float                @default(0)
+  difficultyScore        Float                @default(0)
+  expectedVisibilityGain Float                @default(0)
+  confidenceScore        Float                @default(0)
+  evidence               Json?
+  sources                Json?
+  dataSource             String               @default("AI_PROVIDER")
+  sourceCompetitorIds    String[]             @default([])
+  status                 SuggestionStatus     @default(PENDING)
+  approvedPromptId       String?
+  lastVerifiedAt         DateTime?
+  discoveredAt           DateTime             @default(now())
+  createdAt              DateTime             @default(now())
+  updatedAt              DateTime             @updatedAt
+
+  brand                  Brand                @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  approvedPrompt         Prompt?              @relation(fields: [approvedPromptId], references: [id], onDelete: SetNull)
+
+  @@unique([brandId, queryText])
+  @@index([brandId, status])
+  @@index([brandId, opportunityScore])
+}
+
+model AiEngine {
+  id             String       @id @default(uuid())
+  name           String       @unique
+  version        String?
+  createdAt      DateTime     @default(now())
+
+  responses      AiResponse[]
+  analytics      AnalyticsSnapshot[]
+  geoScoreSnapshots GeoScoreSnapshot[]
+}
+
+model AiResponse {
+  id                String   @id @default(uuid())
+  promptId          String
+  engineId          String
+  rawContent        String
+  structuredContent Json?
+  status            String   @default("COMPLETED")
+  error             String?
+  capturedAt        DateTime @default(now())
+  completedAt       DateTime?
+  screenshotUrl     String?
+  performance_ms    Int?     // Time taken to capture response
+
+  prompt            Prompt   @relation(fields: [promptId], references: [id], onDelete: Cascade)
+  engine            AiEngine @relation(fields: [engineId], references: [id], onDelete: Cascade)
+  mentions          Mention[]
+  citations         Citation[]
+  screenshots       Screenshot[]
+  citationOpportunities CitationOpportunity[]
+
+  @@index([promptId, capturedAt])
+  @@index([engineId, capturedAt])
+  @@index([status])
+}
+
+model Screenshot {
+  id            String     @id @default(uuid())
+  responseId    String
+  url           String
+  type          String     // 'full', 'snippet'
+  createdAt     DateTime   @default(now())
+
+  response      AiResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+
+  @@index([responseId])
+}
+
+model Mention {
+  id             String     @id @default(uuid())
+  responseId     String
+  entityId       String
+  entityType     String     // 'brand' or 'competitor'
+  sentimentScore Float?     // -1.0 to 1.0
+  contextSnippet String?
+  position       Int?       // Position in response (1-indexed)
+  isRecommended  Boolean    @default(false)
+  createdAt      DateTime   @default(now())
+
+  response       AiResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+
+  @@index([responseId])
+  @@index([entityType, entityId])
+  @@index([responseId, entityType])
+}
+
+model Citation {
+  id             String     @id @default(uuid())
+  responseId     String
+  url            String
+  title          String?
+  domain         String?
+  authorityScore Float?     // 0.0 to 1.0
+  createdAt      DateTime   @default(now())
+
+  response       AiResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+
+  @@index([responseId])
+  @@index([domain])
+}
+
+model CitationSource {
+  id                String             @id @default(uuid())
+  domain            String             @unique
+  name              String?
+  url               String?
+  sourceType        CitationSourceType @default(OTHER)
+  authorityScore    Float              @default(0)
+  industryRelevance Float              @default(0)
+  geoRelevance      Float              @default(0)
+  countryRelevance  Float              @default(0)
+  evidence          Json?
+  dataSource        String             @default("DISCOVERY")
+  lastVerifiedAt    DateTime?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+
+  opportunities     CitationOpportunity[]
+
+  @@index([sourceType])
+  @@index([authorityScore])
+}
+
+model CitationOpportunity {
+  id                String                    @id @default(uuid())
+  brandId           String
+  citationSourceId  String
+  competitorId      String?
+  promptId          String?
+  aiResponseId      String?
+  opportunityScore  Float                     @default(0)
+  competitorCitations Int                     @default(0)
+  brandCitations    Int                       @default(0)
+  missingForBrand   Boolean                   @default(true)
+  evidence          Json?
+  recommendedAction String?
+  dataSource        String                    @default("PROMPT_TRACKING")
+  confidenceScore   Float                     @default(0)
+  status            CitationOpportunityStatus @default(OPEN)
+  lastVerifiedAt    DateTime?
+  createdAt         DateTime                  @default(now())
+  updatedAt         DateTime                  @updatedAt
+
+  brand             Brand                     @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  citationSource    CitationSource            @relation(fields: [citationSourceId], references: [id], onDelete: Cascade)
+  competitor        Competitor?               @relation(fields: [competitorId], references: [id], onDelete: SetNull)
+  prompt            Prompt?                   @relation(fields: [promptId], references: [id], onDelete: SetNull)
+  aiResponse        AiResponse?               @relation(fields: [aiResponseId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, opportunityScore])
+  @@index([brandId, status])
+  @@index([citationSourceId])
+}
+
+model AnalyticsSnapshot {
+  id             String    @id @default(uuid())
+  brandId        String
+  engineId       String
+  snapshotDate   DateTime
+  geoScore       Float?    // 0 to 100
+  shareOfVoice   Float?    // Percentage
+  avgSentiment   Float?    // -1 to 1
+  mentionCount   Int       @default(0)
+  citationCount  Int       @default(0)
+  recommendations Recommendation[]
+  createdAt      DateTime  @default(now())
+
+  brand          Brand     @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  engine         AiEngine  @relation(fields: [engineId], references: [id], onDelete: Cascade)
+
+  @@unique([brandId, engineId, snapshotDate])
+  @@index([brandId, snapshotDate])
+  @@index([engineId, snapshotDate])
+}
+
+model GeoScoreSnapshot {
+  id                String    @id @default(uuid())
+  brandId           String
+  engineId          String?
+  promptId          String?
+  geoAuditId        String?
+  snapshotDate      DateTime
+  overallScore      Float     @default(0)
+  schemaScore       Float     @default(0)
+  faqScore          Float     @default(0)
+  authorityScore    Float     @default(0)
+  contentScore      Float     @default(0)
+  citationScore     Float     @default(0)
+  entityScore       Float     @default(0)
+  breakdown         Json?
+  evidence          Json?
+  explanation       Json?
+  dataSource        String    @default("GEO_SCORE_V2")
+  confidenceScore   Float     @default(0)
+  lastVerifiedAt    DateTime?
+  createdAt         DateTime  @default(now())
+
+  brand             Brand     @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  engine            AiEngine? @relation(fields: [engineId], references: [id], onDelete: SetNull)
+  prompt            Prompt?   @relation(fields: [promptId], references: [id], onDelete: SetNull)
+  geoAudit          GeoAudit? @relation(fields: [geoAuditId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, snapshotDate])
+  @@index([engineId, snapshotDate])
+  @@index([confidenceScore])
+}
+
+model GeoInsight {
+  id                     String           @id @default(uuid())
+  brandId                String
+  type                   GeoInsightType
+  title                  String
+  summary                String
+  priority               String           @default("medium")
+  impactScore            Float            @default(0)
+  difficultyScore        Float            @default(0)
+  confidenceScore        Float            @default(0)
+  expectedVisibilityGain Float?
+  expectedScoreIncrease  Float?
+  estimatedRevenueImpact Float?
+  evidence               Json?
+  actions                Json?
+  dataSource             String           @default("GEO_INTELLIGENCE")
+  status                 GeoInsightStatus @default(OPEN)
+  lastVerifiedAt         DateTime?
+  generatedAt            DateTime         @default(now())
+  createdAt              DateTime         @default(now())
+  updatedAt              DateTime         @updatedAt
+
+  brand                  Brand            @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, type])
+  @@index([brandId, priority])
+  @@index([brandId, confidenceScore])
+}
+
+model Recommendation {
+  id             String    @id @default(uuid())
+  snapshotId     String
+  type           String    // 'strategic', 'content', 'citation'
+  priority       String    @default("medium") // low, medium, high
+  title          String
+  content        String
+  isActioned     Boolean   @default(false)
+  createdAt      DateTime  @default(now())
+
+  snapshot       AnalyticsSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  @@index([snapshotId])
+  @@index([priority])
+}
+
+model Report {
+  id             String       @id @default(uuid())
+  organizationId String
+  brandId        String?
+  title          String
+  type           String       @default("PDF")
+  status         String       @default("GENERATED")
+  periodStart    DateTime?
+  periodEnd      DateTime?
+  fileName       String?
+  fileUrl        String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand          Brand?       @relation(fields: [brandId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId, createdAt])
+  @@index([brandId, createdAt])
+}
+
+model GeoAudit {
+  id                 String       @id @default(uuid())
+  organizationId     String
+  brandId            String?
+  url                String
+  status             String       @default("COMPLETED")
+  geoScore           Float        @default(0)
+  aeoScore           Float        @default(0)
+  authorityScore     Float        @default(0)
+  citationReadiness  Float        @default(0)
+  schemaReadiness    Float        @default(0)
+  faqCoverage        Float        @default(0)
+  contentCoverage    Float        @default(0)
+  targetKeywords     String[]     @default([])
+  pageTitle          String?
+  metaDescription    String?
+  wordCount          Int          @default(0)
+  checks             Json?
+  recommendations    Json?
+  error              String?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+
+  organization       Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand              Brand?       @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  geoScoreSnapshots  GeoScoreSnapshot[]
+
+  @@index([organizationId, createdAt])
+  @@index([brandId, createdAt])
+  @@index([status])
+}
+
+model SroAnalysis {
+  id                    String       @id @default(uuid())
+  organizationId        String
+  brandId               String
+  url                   String
+  targetPrompt          String
+  industry              String?
+  country               String?
+  status                String       @default("COMPLETED")
+  sroScore              Float        @default(0)
+  geoScore              Float        @default(0)
+  citationReadiness     Float        @default(0)
+  entityReadiness       Float        @default(0)
+  selectionProbability  Float        @default(0)
+  confidenceScore       Float        @default(0)
+  pageTitle             String?
+  wordCount             Int          @default(0)
+  checks                Json?
+  evidence              Json?
+  competitorComparison  Json?
+  contentGaps           Json?
+  improvementOpportunities Json?
+  dataSource            String       @default("SRO_ENGINE_V1")
+  error                 String?
+  lastVerifiedAt        DateTime?
+  createdAt             DateTime     @default(now())
+  updatedAt             DateTime     @updatedAt
+
+  organization          Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand                 Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  competitorAnalyses    CompetitorPageAnalysis[]
+
+  @@index([organizationId, createdAt])
+  @@index([brandId, createdAt])
+  @@index([brandId, targetPrompt])
+  @@index([status])
+}
+
+model CompetitorPageAnalysis {
+  id                   String      @id @default(uuid())
+  brandId              String
+  competitorId         String?
+  sroAnalysisId        String?
+  competitorName       String
+  url                  String?
+  status               String      @default("COMPLETED")
+  contentDepthScore    Float       @default(0)
+  entityScore          Float       @default(0)
+  schemaScore          Float       @default(0)
+  faqScore             Float       @default(0)
+  citationScore        Float       @default(0)
+  authoritySignalScore Float       @default(0)
+  overallScore         Float       @default(0)
+  confidenceScore      Float       @default(0)
+  pageTitle            String?
+  wordCount            Int         @default(0)
+  entities             Json?
+  citations            Json?
+  schemaTypes          Json?
+  evidence             Json?
+  dataSource           String      @default("COMPETITOR_PAGE_SCRAPER_V1")
+  error                String?
+  lastVerifiedAt       DateTime?
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
+
+  brand                Brand       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  competitor           Competitor? @relation(fields: [competitorId], references: [id], onDelete: SetNull)
+  sroAnalysis          SroAnalysis? @relation(fields: [sroAnalysisId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, createdAt])
+  @@index([competitorId, createdAt])
+  @@index([sroAnalysisId])
+}
+
+model GeoExecutionAsset {
+  id              String       @id @default(uuid())
+  organizationId  String
+  brandId         String
+  type            String
+  title           String
+  status          String       @default("GENERATED")
+  input           Json?
+  output          Json?
+  markdown        String?
+  evidence        Json?
+  confidenceScore Float        @default(0)
+  revenueImpact   Float        @default(0)
+  geoImpact       Float        @default(0)
+  difficultyScore Float        @default(0)
+  priorityScore   Float        @default(0)
+  dataSource      String       @default("GEO_EXECUTION_ENGINE_V1")
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand           Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt])
+  @@index([brandId, type, createdAt])
+  @@index([brandId, priorityScore])
+  @@index([status])
+}
+
+model GeoExecutionPackage {
+  id              String       @id @default(uuid())
+  organizationId  String
+  brandId         String
+  createdById     String?
+  title           String
+  status          String       @default("READY")
+  assetIds        Json?
+  contents        Json?
+  markdown        String?
+  exports         Json?
+  evidence        Json?
+  confidenceScore Float        @default(0)
+  priorityScore   Float        @default(0)
+  dataSource      String       @default("GEO_AUTOPILOT_PACKAGER")
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand           Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  createdBy       User?        @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  publications    CmsPublication[]
+
+  @@index([organizationId, createdAt])
+  @@index([brandId, status, createdAt])
+  @@index([createdById])
+}
+
+model CmsConnection {
+  id              String       @id @default(uuid())
+  organizationId  String
+  brandId         String?
+  provider        String
+  siteUrl         String
+  status          String       @default("NEEDS_CREDENTIALS")
+  credentialsRef  String?
+  credentialsMeta Json?
+  evidence        Json?
+  confidenceScore Float        @default(0)
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand           Brand?       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  publications    CmsPublication[]
+
+  @@index([organizationId, provider])
+  @@index([brandId, provider])
+  @@index([status])
+}
+
+model CmsPublication {
+  id              String       @id @default(uuid())
+  organizationId  String
+  brandId         String
+  connectionId    String?
+  packageId       String?
+  assetId         String?
+  provider        String
+  contentType     String       @default("PAGE")
+  title           String
+  status          String       @default("DRAFT")
+  remoteId        String?
+  remoteUrl       String?
+  requestPayload  Json?
+  response        Json?
+  evidence        Json?
+  confidenceScore Float        @default(0)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand           Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  connection      CmsConnection? @relation(fields: [connectionId], references: [id], onDelete: SetNull)
+  package         GeoExecutionPackage? @relation(fields: [packageId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId, provider, status])
+  @@index([brandId, status])
+  @@index([connectionId])
+  @@index([packageId])
+}
+
+model IndustryBenchmark {
+  id                String   @id @default(uuid())
+  industry          String
+  country           String
+  sampleSize        Int      @default(0)
+  avgGeoScore       Float    @default(0)
+  avgCitationScore  Float    @default(0)
+  avgVisibilityScore Float   @default(0)
+  avgAuthorityScore Float    @default(0)
+  percentiles       Json?
+  sourceDescription String?
+  confidenceScore   Float    @default(0)
+  computedAt        DateTime @default(now())
+  createdAt         DateTime @default(now())
+
+  @@index([industry, country])
+  @@index([computedAt])
+}
+
+model IntelligenceSnapshot {
+  id              String   @id @default(uuid())
+  brandId         String
+  engine          String
+  subjectType     String
+  subjectId       String?
+  metricKey       String
+  metricValue     Float?
+  payload         Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("INTELLIGENCE_MEMORY")
+  sourceHash      String
+  capturedAt      DateTime @default(now())
+  periodStart     DateTime?
+  periodEnd       DateTime?
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, engine, capturedAt])
+  @@index([brandId, metricKey, capturedAt])
+  @@index([brandId, subjectType, subjectId])
+  @@index([sourceHash])
+}
+
+model IntelligenceChange {
+  id              String   @id @default(uuid())
+  brandId         String
+  engine          String
+  subjectType     String
+  subjectId       String?
+  changeType      String
+  previousValue   Float?
+  currentValue    Float?
+  delta           Float?
+  direction       String   @default("STABLE")
+  velocity        String   @default("SLOW")
+  summary         String
+  reason          String
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("CHANGE_DETECTION")
+  detectedAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, detectedAt])
+  @@index([brandId, engine, changeType])
+  @@index([brandId, direction])
+}
+
+model RecommendationOutcome {
+  id                 String              @id @default(uuid())
+  brandId            String
+  actionId           String?
+  actionType         String              @default("GEO_INSIGHT")
+  title              String
+  status             ActionOutcomeStatus @default(PENDING)
+  expectedMetric     String
+  expectedImpact     Float               @default(0)
+  baselineValue      Float?
+  actualValue        Float?
+  actualImpact       Float?
+  effectivenessScore Float?
+  evidence           Json?
+  confidenceScore    Float               @default(0)
+  dataSource         String              @default("ACTION_OUTCOME_TRACKING")
+  startedAt          DateTime?
+  completedAt        DateTime?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  brand              Brand               @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, status])
+  @@index([brandId, expectedMetric])
+  @@index([actionId])
+}
+
+model EntityAlias {
+  id              String   @id @default(uuid())
+  brandId         String
+  canonical       String
+  alias           String
+  category        String   @default("ENTITY")
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("ENTITY_NORMALIZATION")
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@unique([brandId, alias])
+  @@index([brandId, canonical])
+  @@index([brandId, category])
+}
+
+model GeoResearchRun {
+  id              String   @id @default(uuid())
+  brandId         String?
+  industry        String?
+  country         String?
+  websiteUrl      String?
+  type            String
+  status          String   @default("COMPLETED")
+  summary         String?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  provider        String?
+  model           String?
+  dataSource      String   @default("GEO_RESEARCH")
+  startedAt       DateTime @default(now())
+  completedAt     DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  brand           Brand?   @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  items           GeoResearchItem[]
+
+  @@index([brandId, type, createdAt])
+  @@index([industry, country, type])
+  @@index([status])
+}
+
+model GeoResearchItem {
+  id              String   @id @default(uuid())
+  runId           String?
+  brandId         String?
+  industry        String?
+  country         String?
+  type            String
+  title           String
+  value           String?
+  url             String?
+  domain          String?
+  category        String?
+  score           Float    @default(0)
+  importance      Float    @default(0)
+  opportunity     Float    @default(0)
+  difficulty      Float    @default(0)
+  revenuePotential Float   @default(0)
+  evidence        Json?
+  sources         Json?
+  metadata        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("GEO_RESEARCH")
+  sourceHash      String
+  firstSeenAt     DateTime @default(now())
+  lastSeenAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  run             GeoResearchRun? @relation(fields: [runId], references: [id], onDelete: SetNull)
+  brand           Brand?          @relation(fields: [brandId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, type, score])
+  @@index([industry, country, type])
+  @@index([domain])
+  @@index([sourceHash])
+}
+
+model KnowledgeGraphNode {
+  id              String   @id @default(uuid())
+  key             String   @unique
+  type            String
+  label           String
+  url             String?
+  domain          String?
+  industry        String?
+  country         String?
+  evidence        Json?
+  metadata        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("GEO_RESEARCH_GRAPH")
+  firstSeenAt     DateTime @default(now())
+  lastSeenAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  outgoingEdges   KnowledgeGraphEdge[] @relation("GraphOutgoing")
+  incomingEdges   KnowledgeGraphEdge[] @relation("GraphIncoming")
+
+  @@index([type])
+  @@index([industry, country])
+  @@index([domain])
+}
+
+model KnowledgeGraphEdge {
+  id              String   @id @default(uuid())
+  fromNodeId      String
+  toNodeId        String
+  relationship    String
+  weight          Float    @default(1)
+  evidence        Json?
+  metadata        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("GEO_RESEARCH_GRAPH")
+  firstSeenAt     DateTime @default(now())
+  lastSeenAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  fromNode        KnowledgeGraphNode @relation("GraphOutgoing", fields: [fromNodeId], references: [id], onDelete: Cascade)
+  toNode          KnowledgeGraphNode @relation("GraphIncoming", fields: [toNodeId], references: [id], onDelete: Cascade)
+
+  @@unique([fromNodeId, toNodeId, relationship])
+  @@index([relationship])
+  @@index([confidenceScore])
+}
+
+model MarketCoverageSnapshot {
+  id              String   @id @default(uuid())
+  brandId         String?
+  industry        String?
+  country         String?
+  topics          Json?
+  services        Json?
+  entities        Json?
+  sources         Json?
+  prompts         Json?
+  competitors     Json?
+  gaps            Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("MARKET_COVERAGE_ENGINE")
+  capturedAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  brand           Brand?   @relation(fields: [brandId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, capturedAt])
+  @@index([industry, country, capturedAt])
+}
+
+model GeoResearchTrend {
+  id              String   @id @default(uuid())
+  industry        String?
+  country         String?
+  subjectType     String
+  subjectKey      String
+  label           String
+  classification  String   @default("EARLY")
+  direction       String   @default("STABLE")
+  velocity        String   @default("SLOW")
+  score           Float    @default(0)
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("TREND_DISCOVERY_ENGINE")
+  firstSeenAt     DateTime @default(now())
+  lastSeenAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([industry, country, subjectType, subjectKey])
+  @@index([industry, country, classification])
+  @@index([subjectType, direction])
+}
+
+model AutomatedAnalystSummary {
+  id              String   @id @default(uuid())
+  organizationId  String?
+  brandId         String?
+  industry        String?
+  country         String?
+  periodStart     DateTime
+  periodEnd       DateTime
+  summary         String
+  changes         Json?
+  opportunities   Json?
+  threats         Json?
+  citations       Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("AUTOMATED_GEO_ANALYST")
+  createdAt       DateTime @default(now())
+
+  brand           Brand?   @relation(fields: [brandId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, createdAt])
+  @@index([industry, country, createdAt])
+  @@index([organizationId, createdAt])
+}
+
+model GeoCopilotInteraction {
+  id                 String   @id @default(uuid())
+  brandId            String
+  userId             String?
+  question           String
+  answer             String
+  recommendedActions Json?
+  evidence           Json?
+  sources            Json?
+  contextSummary     Json?
+  confidenceScore    Float    @default(0)
+  provider           String?
+  model              String?
+  dataSource         String   @default("GEO_COPILOT")
+  createdAt          DateTime @default(now())
+
+  brand              Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  user               User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, createdAt])
+  @@index([userId, createdAt])
+}
+
+model GeoActionPlan {
+  id              String   @id @default(uuid())
+  brandId         String
+  horizonDays     Int
+  title           String
+  summary         String
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("GEO_ACTION_PLANNER")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  tasks           GeoTask[]
+
+  @@index([brandId, horizonDays, createdAt])
+}
+
+model GeoTask {
+  id              String   @id @default(uuid())
+  brandId         String
+  planId          String?
+  ownerId         String?
+  executionPackageId String?
+  sourceType      String   @default("GEO_INSIGHT")
+  sourceId        String?
+  title           String
+  description     String
+  priority        String   @default("medium")
+  status          String   @default("OPEN")
+  dependencies    Json?
+  expectedImpact  Json?
+  impactScore     Float    @default(0)
+  difficultyScore Float    @default(0)
+  expectedGeoGain Float    @default(0)
+  confidenceScore Float    @default(0)
+  evidence        Json?
+  dataSource      String   @default("GEO_TASK_ENGINE")
+  dueAt           DateTime?
+  completedAt     DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  plan            GeoActionPlan? @relation(fields: [planId], references: [id], onDelete: SetNull)
+  owner           User?    @relation("GeoTaskOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+
+  @@index([brandId, status])
+  @@index([brandId, priority])
+  @@index([ownerId])
+  @@index([executionPackageId])
+  @@index([planId])
+}
+
+model RoiImpactSnapshot {
+  id              String   @id @default(uuid())
+  brandId         String
+  taskId          String?
+  actionTitle     String
+  baseline        Json?
+  current         Json?
+  deltas          Json?
+  impactScore     Float    @default(0)
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("GEO_AUTOPILOT_ROI_TRACKING")
+  measuredAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, measuredAt])
+  @@index([taskId])
+}
+
+model GeoOsInbox {
+  id                    String       @id @default(uuid())
+  organizationId        String
+  brandId               String
+  period                String       @default("DAILY")
+  priorityQueue         Json?
+  recommendedActions    Json?
+  blockedActions        Json?
+  completedActions      Json?
+  upcomingOpportunities Json?
+  weeklyReport          Json?
+  monthlyReport         Json?
+  evidence              Json?
+  confidenceScore       Float        @default(0)
+  dataSource            String       @default("GEO_AUTOPILOT_OS")
+  createdAt             DateTime     @default(now())
+
+  organization          Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand                 Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, period, createdAt])
+  @@index([brandId, period, createdAt])
+}
+
+model Market {
+  id              String   @id @default(uuid())
+  name            String
+  slug            String   @unique
+  industry        String
+  region          String?
+  country         String
+  language        String   @default("en")
+  vertical        String?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("MARKET_INTELLIGENCE_CLOUD")
+  lastRefreshedAt DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  brands          MarketBrand[]
+  prompts         MarketPrompt[]
+  citationDomains MarketCitationDomain[]
+  trends          MarketTrend[]
+  visibilitySnapshots MarketVisibilitySnapshot[]
+  leaderboards    MarketLeaderboardSnapshot[]
+  benchmarks      MarketBenchmarkSnapshot[]
+  opportunities   MarketOpportunity[]
+  indexSnapshots  InsightAiMarketIndexSnapshot[]
+  collectionRuns  MarketCollectionRun[]
+  discoveryCandidates MarketDiscoveryCandidate[]
+  sourceComparisons CrossMarketComparisonSnapshot[] @relation("SourceMarketComparisons")
+  targetComparisons CrossMarketComparisonSnapshot[] @relation("TargetMarketComparisons")
+  publicReports   PublicMarketReport[]
+  marketAlerts    MarketAlert[]
+  vectorDocuments MarketVectorDocument[]
+
+  @@index([industry, country])
+  @@index([region])
+  @@index([vertical])
+}
+
+model MarketBrand {
+  id                 String   @id @default(uuid())
+  marketId           String
+  customerBrandId    String?
+  name               String
+  websiteUrl         String?
+  category           String   @default("BRAND")
+  geoScore           Float    @default(0)
+  visibilityScore    Float    @default(0)
+  citationScore      Float    @default(0)
+  growthScore        Float    @default(0)
+  trendDirection     String   @default("STABLE")
+  shareOfVoice       Float    @default(0)
+  citationShare      Float    @default(0)
+  entityShare        Float    @default(0)
+  rank               Int?
+  evidence           Json?
+  confidenceScore    Float    @default(0)
+  dataSource         String   @default("MARKET_DATABASE")
+  lastVerifiedAt     DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  market             Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@unique([marketId, name])
+  @@index([marketId, rank])
+  @@index([marketId, category])
+  @@index([customerBrandId])
+}
+
+model MarketPrompt {
+  id                String   @id @default(uuid())
+  marketId          String
+  queryText         String
+  category          String   @default("INFORMATIONAL")
+  promptVolume      Float    @default(0)
+  difficultyScore   Float    @default(0)
+  competitionScore  Float    @default(0)
+  opportunityScore  Float    @default(0)
+  growthScore       Float    @default(0)
+  trendDirection    String   @default("STABLE")
+  commercialValue   Float    @default(0)
+  evidence          Json?
+  confidenceScore   Float    @default(0)
+  dataSource        String   @default("PROMPT_MARKETPLACE")
+  lastVerifiedAt    DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  market            Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@unique([marketId, queryText])
+  @@index([marketId, opportunityScore])
+  @@index([marketId, growthScore])
+  @@index([marketId, category])
+}
+
+model MarketCitationDomain {
+  id                  String   @id @default(uuid())
+  marketId            String
+  domain              String
+  sourceType          String   @default("OTHER")
+  authorityScore      Float    @default(0)
+  citationFrequency   Float    @default(0)
+  growthScore         Float    @default(0)
+  industryRelevance   Float    @default(0)
+  governmentSource    Boolean  @default(false)
+  researchSource      Boolean  @default(false)
+  publicationSource   Boolean  @default(false)
+  evidence            Json?
+  confidenceScore     Float    @default(0)
+  dataSource          String   @default("CITATION_MARKET_INTELLIGENCE")
+  lastVerifiedAt      DateTime?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  market              Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@unique([marketId, domain])
+  @@index([marketId, authorityScore])
+  @@index([marketId, growthScore])
+  @@index([marketId, sourceType])
+}
+
+model MarketTrend {
+  id              String   @id @default(uuid())
+  marketId        String
+  trendType       String
+  label           String
+  direction       String   @default("STABLE")
+  velocity        String   @default("SLOW")
+  score           Float    @default(0)
+  sampleSize      Int      @default(0)
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("TREND_INTELLIGENCE")
+  firstSeenAt     DateTime @default(now())
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@unique([marketId, trendType, label])
+  @@index([marketId, score])
+  @@index([marketId, direction])
+  @@index([marketId, trendType])
+}
+
+model MarketVisibilitySnapshot {
+  id                  String   @id @default(uuid())
+  marketId            String
+  marketBrandId       String?
+  brandName           String
+  geoScore            Float    @default(0)
+  visibilityScore     Float    @default(0)
+  citationScore       Float    @default(0)
+  marketRank          Int?
+  industryRank        Int?
+  regionalRank        Int?
+  trendDirection      String   @default("STABLE")
+  evidence            Json?
+  confidenceScore     Float    @default(0)
+  capturedAt          DateTime @default(now())
+  dataSource          String   @default("AI_VISIBILITY_INDEX")
+  createdAt           DateTime @default(now())
+
+  market              Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, capturedAt])
+  @@index([marketId, marketRank])
+  @@index([marketBrandId])
+}
+
+model MarketLeaderboardSnapshot {
+  id              String   @id @default(uuid())
+  marketId        String
+  type            String
+  title           String
+  rows            Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("MARKET_LEADERBOARDS")
+  createdAt       DateTime @default(now())
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, type, capturedAt])
+}
+
+model MarketBenchmarkSnapshot {
+  id              String   @id @default(uuid())
+  marketId        String
+  brandName       String?
+  customerBrandId String?
+  sampleSize      Int      @default(0)
+  marketAverage   Json?
+  topTenPercent   Json?
+  brandMetrics    Json?
+  competitorMetrics Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("MARKET_BENCHMARKS")
+  createdAt       DateTime @default(now())
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, capturedAt])
+  @@index([customerBrandId])
+}
+
+model MarketOpportunity {
+  id              String   @id @default(uuid())
+  marketId        String
+  type            String
+  title           String
+  description     String
+  opportunityScore Float   @default(0)
+  difficultyScore Float    @default(0)
+  expectedImpact  Float    @default(0)
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  status          String   @default("OPEN")
+  dataSource      String   @default("MARKET_OPPORTUNITY_ENGINE")
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, opportunityScore])
+  @@index([marketId, type])
+  @@index([marketId, status])
+}
+
+model InsightAiMarketIndexSnapshot {
+  id              String   @id @default(uuid())
+  marketId        String
+  indexName       String   @default("Insight AI Market Index")
+  score           Float    @default(0)
+  sampleSize      Int      @default(0)
+  summary         Json?
+  leaderboards    Json?
+  opportunities   Json?
+  trends          Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("INSIGHT_AI_MARKET_INDEX")
+  createdAt       DateTime @default(now())
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, capturedAt])
+  @@index([indexName])
+}
+
+model MarketCollectionRun {
+  id                String   @id @default(uuid())
+  marketId          String?
+  collectorType     String
+  status            String   @default("COMPLETED")
+  source            String   @default("GEO_DATA_NETWORK")
+  recordsCollected  Int      @default(0)
+  recordsCreated    Int      @default(0)
+  recordsUpdated    Int      @default(0)
+  freshnessScore    Float    @default(0)
+  reliabilityScore  Float    @default(0)
+  confidenceScore   Float    @default(0)
+  startedAt         DateTime @default(now())
+  finishedAt        DateTime?
+  evidence          Json?
+  metadata          Json?
+  dataSource        String   @default("DATA_COLLECTION_FRAMEWORK")
+  createdAt         DateTime @default(now())
+
+  market            Market?  @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, collectorType, startedAt])
+  @@index([collectorType, status])
+}
+
+model MarketDiscoveryCandidate {
+  id              String   @id @default(uuid())
+  marketId        String?
+  industry        String
+  region          String?
+  country         String
+  language        String   @default("en")
+  vertical        String?
+  opportunityScore Float   @default(0)
+  coverageScore   Float    @default(0)
+  competitionScore Float   @default(0)
+  status          String   @default("DISCOVERED")
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("MARKET_DISCOVERY_ENGINE")
+  lastVerifiedAt  DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  market          Market?  @relation(fields: [marketId], references: [id], onDelete: SetNull)
+
+  @@unique([industry, country, language, vertical])
+  @@index([country, industry])
+  @@index([opportunityScore])
+  @@index([status])
+}
+
+model CrossMarketComparisonSnapshot {
+  id              String   @id @default(uuid())
+  sourceMarketId  String
+  targetMarketId  String
+  comparisonType  String   @default("MARKET_VS_MARKET")
+  opportunityGap  Float    @default(0)
+  competitionGap  Float    @default(0)
+  citationGap     Float    @default(0)
+  visibilityGap   Float    @default(0)
+  trendGap        Float    @default(0)
+  summary         Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("CROSS_MARKET_INTELLIGENCE")
+  createdAt       DateTime @default(now())
+
+  sourceMarket    Market   @relation("SourceMarketComparisons", fields: [sourceMarketId], references: [id], onDelete: Cascade)
+  targetMarket    Market   @relation("TargetMarketComparisons", fields: [targetMarketId], references: [id], onDelete: Cascade)
+
+  @@index([sourceMarketId, capturedAt])
+  @@index([targetMarketId, capturedAt])
+  @@index([comparisonType])
+}
+
+model RegionalGeoIndexSnapshot {
+  id              String   @id @default(uuid())
+  region          String
+  indexName       String   @default("Insight AI Regional GEO Index")
+  score           Float    @default(0)
+  marketCount     Int      @default(0)
+  sampleSize      Int      @default(0)
+  topMarkets      Json?
+  topBrands       Json?
+  topPrompts      Json?
+  topCitations    Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("REGIONAL_INTELLIGENCE")
+  createdAt       DateTime @default(now())
+
+  @@index([region, capturedAt])
+  @@index([score])
+}
+
+model GlobalGeoIndexSnapshot {
+  id              String   @id @default(uuid())
+  indexName       String   @default("Insight AI Global GEO Index")
+  score           Float    @default(0)
+  marketCount     Int      @default(0)
+  industryCount   Int      @default(0)
+  countryCount    Int      @default(0)
+  sampleSize      Int      @default(0)
+  rankings        Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("GLOBAL_GEO_INDEX")
+  createdAt       DateTime @default(now())
+
+  @@index([capturedAt])
+  @@index([score])
+}
+
+model PublicMarketReport {
+  id              String   @id @default(uuid())
+  marketId        String
+  reportType      String   @default("MARKET_REPORT")
+  title           String
+  slug            String   @unique
+  summary         Json?
+  landingPagePath String?
+  pdfPath         String?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  status          String   @default("GENERATED")
+  generatedAt     DateTime @default(now())
+  dataSource      String   @default("PUBLIC_MARKET_REPORTS")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, reportType])
+  @@index([status])
+}
+
+model GeoDataApiUsage {
+  id              String   @id @default(uuid())
+  endpoint        String
+  marketId        String?
+  organizationId  String?
+  userId          String?
+  recordsReturned Int     @default(0)
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  createdAt       DateTime @default(now())
+  dataSource      String   @default("GEO_DATA_API")
+
+  @@index([endpoint, createdAt])
+  @@index([marketId])
+  @@index([organizationId])
+}
+
+model MarketAlert {
+  id              String   @id @default(uuid())
+  marketId        String
+  alertType       String
+  title           String
+  message         String
+  severity        String   @default("MEDIUM")
+  status          String   @default("OPEN")
+  recommendedAction String?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  triggeredAt     DateTime @default(now())
+  dataSource      String   @default("MARKET_ALERT_NETWORK")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@index([marketId, triggeredAt])
+  @@index([alertType, status])
+}
+
+model DataMoatSnapshot {
+  id              String   @id @default(uuid())
+  score           Float    @default(0)
+  marketCoverage  Float    @default(0)
+  dataFreshness   Float    @default(0)
+  dataReliability Float    @default(0)
+  dataConfidence  Float    @default(0)
+  coverageStats   Json?
+  evidence        Json?
+  capturedAt      DateTime @default(now())
+  dataSource      String   @default("PROPRIETARY_DATA_MOAT")
+  createdAt       DateTime @default(now())
+
+  @@index([capturedAt])
+  @@index([score])
+}
+
+model MarketVectorDocument {
+  id              String   @id @default(uuid())
+  marketId        String
+  documentType    String
+  sourceId        String?
+  title           String
+  content         String
+  metadata        Json?
+  embeddingStatus String   @default("PENDING")
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  dataSource      String   @default("LOCAL_AI_DATA_PREPARATION")
+
+  market          Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+
+  @@unique([marketId, documentType, sourceId])
+  @@index([marketId, documentType])
+  @@index([embeddingStatus])
+}
+
+model GeoForecast {
+  id              String   @id @default(uuid())
+  brandId         String
+  horizonDays     Int
+  metricKey       String
+  currentValue    Float
+  predictedValue  Float
+  delta           Float
+  direction       String   @default("STABLE")
+  assumptions     Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("PREDICTIVE_GEO_ENGINE")
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, horizonDays, metricKey, createdAt])
+}
+
+model CompetitorWarRoomSnapshot {
+  id              String   @id @default(uuid())
+  brandId         String
+  threatRanking   Json?
+  citationRanking Json?
+  geoRanking      Json?
+  promptRanking   Json?
+  trendRanking    Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("COMPETITOR_WAR_ROOM")
+  capturedAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, capturedAt])
+}
+
+model GraphInfluenceSnapshot {
+  id                   String   @id @default(uuid())
+  brandId              String
+  sourceInfluence      Json?
+  competitorInfluence  Json?
+  topicInfluence       Json?
+  citationInfluence    Json?
+  evidence             Json?
+  confidenceScore      Float    @default(0)
+  dataSource           String   @default("KNOWLEDGE_GRAPH_ANALYTICS")
+  capturedAt           DateTime @default(now())
+  createdAt            DateTime @default(now())
+
+  brand                Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, capturedAt])
+}
+
+model CommandCenterSnapshot {
+  id              String   @id @default(uuid())
+  brandId         String
+  whatHappened    Json?
+  why             Json?
+  whatMatters     Json?
+  nextActions     Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("EXECUTIVE_COMMAND_CENTER")
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, createdAt])
+}
+
+model AgencyCopilotSummary {
+  id                 String   @id @default(uuid())
+  organizationId     String
+  periodStart        DateTime
+  periodEnd          DateTime
+  summary            String
+  atRiskClients      Json?
+  fastGrowingClients Json?
+  opportunities      Json?
+  threats            Json?
+  evidence           Json?
+  confidenceScore    Float    @default(0)
+  dataSource         String   @default("AGENCY_COPILOT")
+  createdAt          DateTime @default(now())
+
+  organization       Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt])
+}
+
+model AutonomousRun {
+  id              String    @id @default(uuid())
+  organizationId  String
+  brandId         String?
+  runType         String
+  frequency       String
+  status          String    @default("PENDING")
+  queueJobId      String?
+  payload         Json?
+  result          Json?
+  error           String?
+  evidence        Json?
+  confidenceScore Float     @default(0)
+  dataSource      String    @default("AUTONOMOUS_GEO_SCHEDULER")
+  scheduledFor    DateTime?
+  startedAt       DateTime?
+  finishedAt      DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand           Brand?       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, status, createdAt])
+  @@index([brandId, runType, createdAt])
+  @@index([queueJobId])
+}
+
+model AutonomousAlert {
+  id                String    @id @default(uuid())
+  organizationId    String
+  brandId           String
+  type              String
+  severity          String    @default("MEDIUM")
+  status            String    @default("OPEN")
+  title             String
+  message           String
+  why               Json?
+  evidence          Json?
+  confidenceScore   Float     @default(0)
+  recommendedAction String?
+  priorityScore     Float     @default(0)
+  sourceType        String?
+  sourceId          String?
+  dataSource        String    @default("AUTONOMOUS_ALERT_ENGINE")
+  createdAt         DateTime  @default(now())
+  resolvedAt        DateTime?
+
+  organization      Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand             Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, status, createdAt])
+  @@index([brandId, severity, status])
+  @@index([brandId, type, createdAt])
+}
+
+model AutonomousPrioritizationSnapshot {
+  id              String   @id @default(uuid())
+  brandId         String
+  threats         Json?
+  opportunities   Json?
+  tasks           Json?
+  recommendations Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("AUTONOMOUS_PRIORITIZATION_ENGINE")
+  createdAt       DateTime @default(now())
+
+  brand           Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, createdAt])
+}
+
+model ClientHealthScore {
+  id              String   @id @default(uuid())
+  organizationId  String
+  brandId         String
+  score           Float
+  level           String
+  previousScore   Float?
+  delta           Float?
+  factors         Json?
+  explanation     Json?
+  evidence        Json?
+  confidenceScore Float    @default(0)
+  dataSource      String   @default("AUTONOMOUS_CLIENT_HEALTH")
+  capturedAt      DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand           Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, capturedAt])
+  @@index([brandId, capturedAt])
+  @@index([brandId, level])
+}
+
+model GeoLearningOutcome {
+  id                 String   @id @default(uuid())
+  brandId            String
+  actionId           String?
+  actionTitle        String
+  expectedMetric     String
+  expectedImpact     Float    @default(0)
+  actualImpact       Float?
+  effectivenessScore Float?
+  learnedSignal      String
+  evidence           Json?
+  confidenceScore    Float    @default(0)
+  dataSource         String   @default("GEO_MEMORY_EVOLUTION")
+  createdAt          DateTime @default(now())
+
+  brand              Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId, createdAt])
+  @@index([brandId, learnedSignal])
+}
+
+model GeoOsStatusSnapshot {
+  id                 String   @id @default(uuid())
+  organizationId     String
+  brandId            String?
+  whatChanged        Json?
+  whatMatters        Json?
+  whatShouldHappenNext Json?
+  highestThreat      Json?
+  highestOpportunity Json?
+  highestRoiTask     Json?
+  forecastSummary    Json?
+  executiveSummary   Json?
+  agencySummary      Json?
+  systemHealth       Json?
+  evidence           Json?
+  confidenceScore    Float    @default(0)
+  dataSource         String   @default("GEO_OPERATING_SYSTEM")
+  createdAt          DateTime @default(now())
+
+  organization       Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  brand              Brand?       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt])
+  @@index([brandId, createdAt])
+}
+
+model Job {
+  id             String    @id @default(uuid())
+  organizationId String
+  type           String    // 'PROMPT_EXEC', 'NLP_ANALYSIS', 'SNAPSHOT_GEN'
+  status         JobStatus @default(PENDING)
+  priority       Int       @default(0)
+  attempts       Int       @default(0)
+  maxAttempts    Int       @default(3)
+  payload        Json?
+  result         Json?
+  error          String?
+  startedAt      DateTime?
+  finishedAt     DateTime?
+  createdAt      DateTime  @default(now())
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, status])
+  @@index([type, status])
+}
+
+model Plan {
+  id               String   @id @default(uuid())
+  code             String   @unique
+  name             String
+  description      String?
+  priceMonthly     Float    @default(0)
+  priceAnnual      Float    @default(0)
+  currency         String   @default("USD")
+  brandsLimit      Int      @default(1)
+  competitorsLimit Int      @default(3)
+  usersLimit       Int      @default(1)
+  promptsLimit     Int      @default(5)
+  aiRequestsLimit  Int      @default(100)
+  reportsLimit     Int      @default(1)
+  whiteLabelAccess Boolean  @default(false)
+  apiAccess         Boolean  @default(false)
+  supportLevel      String   @default("Community")
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  subscriptions    Subscription[]
+
+  @@index([isActive])
+}
+
+model Subscription {
+  id             String   @id @default(uuid())
+  organizationId String
+  planId         String?
+  status         String   @default("TRIAL")
+  startsAt       DateTime @default(now())
+  expiresAt      DateTime?
+  trialEndsAt    DateTime?
+  manualNotes    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  plan           Plan?        @relation(fields: [planId], references: [id], onDelete: SetNull)
+  payments       Payment[]
+
+  @@index([organizationId, status])
+  @@index([planId])
+  @@index([expiresAt])
+}
+
+model Payment {
+  id             String   @id @default(uuid())
+  organizationId String
+  subscriptionId String?
+  amount         Float
+  currency       String   @default("USD")
+  method         String   @default("Manual Invoice")
+  status         String   @default("PENDING")
+  paidAt         DateTime?
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  subscription   Subscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+  couponRedemptions CouponRedemption[]
+
+  @@index([organizationId, status])
+  @@index([subscriptionId])
+  @@index([createdAt])
+}
+
+model Coupon {
+  id             String   @id @default(uuid())
+  code           String   @unique
+  type           String
+  value          Float
+  expiresAt      DateTime?
+  usageLimit     Int?
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  redemptions    CouponRedemption[]
+
+  @@index([isActive])
+  @@index([expiresAt])
+}
+
+model CouponRedemption {
+  id             String   @id @default(uuid())
+  couponId       String
+  organizationId String
+  paymentId      String?
+  redeemedAt     DateTime @default(now())
+
+  coupon         Coupon       @relation(fields: [couponId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  payment        Payment?     @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+
+  @@index([couponId])
+  @@index([organizationId])
+}
+
+model FeatureFlag {
+  id             String   @id @default(uuid())
+  organizationId String?
+  key            String
+  enabled        Boolean  @default(false)
+  description    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, key])
+  @@index([key])
+  @@index([organizationId])
+}
+
+model SupportTicket {
+  id             String   @id @default(uuid())
+  organizationId String?
+  userId         String?
+  assignedToId   String?
+  subject        String
+  status         String   @default("OPEN")
+  priority       String   @default("MEDIUM")
+  messages       Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+  user           User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  assignedTo     User?         @relation("AssignedSupportTickets", fields: [assignedToId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId, status])
+  @@index([assignedToId])
+  @@index([status])
+}
+
+model AuditLog {
+  id             String   @id @default(uuid())
+  action         String
+  entityType     String?
+  entityId       String?
+  actorUserId    String?
+  targetUserId   String?
+  organizationId String?
+  ipAddress      String?
+  metadata       Json?
+  createdAt      DateTime @default(now())
+
+  actor          User?         @relation("AuditActor", fields: [actorUserId], references: [id], onDelete: SetNull)
+  targetUser     User?         @relation("AuditTargetUser", fields: [targetUserId], references: [id], onDelete: SetNull)
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+
+  @@index([action])
+  @@index([actorUserId])
+  @@index([organizationId])
+  @@index([createdAt])
+}
+
+model CustomLimits {
+  id              String   @id @default(uuid())
+  organizationId  String   @unique
+  brandsLimit     Int?
+  competitorsLimit Int?
+  usersLimit      Int?
+  promptsLimit    Int?
+  aiRequestsLimit Int?
+  reportsLimit    Int?
+  whiteLabelAccess Boolean?
+  apiAccess        Boolean?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model OrganizationSettings {
+  id             String   @id @default(uuid())
+  organizationId String   @unique
+  logoUrl        String?
+  brandColor     String?
+  customDomain   String?
+  reportBranding Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id             String    @id @default(uuid())
+  organizationId String
+  userId         String?
+  type           String
+  title          String
+  message        String
+  channel        String    @default("IN_APP")
+  isRead         Boolean   @default(false)
+  metadata       Json?
+  createdAt      DateTime  @default(now())
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user           User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt])
+  @@index([userId, isRead])
+  @@index([type])
+}
