@@ -1,0 +1,164 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R] /Count 4 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 4 0 R >> endobj
+4 0 obj << /Length 3100 >> stream
+BT /F1 11 Tf 50 760 Td (OrcaTech GEO Intelligence V2) Tj ET
+BT /F1 11 Tf 50 743 Td (Agency: OrcaTech) Tj ET
+BT /F1 11 Tf 50 726 Td (Brand: OrcaTech) Tj ET
+BT /F1 11 Tf 50 709 Td (Website: https://orcatech.online) Tj ET
+BT /F1 11 Tf 50 692 Td (Generated: 2026-06-08T07:17:49.130Z) Tj ET
+BT /F1 11 Tf 50 675 Td (Branding color: Not configured) Tj ET
+BT /F1 11 Tf 50 658 Td (Logo URL: Not configured) Tj ET
+BT /F1 11 Tf 50 641 Td () Tj ET
+BT /F1 11 Tf 50 624 Td (1. Executive Summary) Tj ET
+BT /F1 11 Tf 50 607 Td (OrcaTech GEO intelligence summary is based only on stored audits, prompt responses,) Tj ET
+BT /F1 11 Tf 50 590 Td (citations, and V2 engine outputs.) Tj ET
+BT /F1 11 Tf 50 573 Td (GEO Score: INSUFFICIENT_DATA) Tj ET
+BT /F1 11 Tf 50 556 Td (Threats: INSUFFICIENT_DATA) Tj ET
+BT /F1 11 Tf 50 539 Td (Opportunities: 4) Tj ET
+BT /F1 11 Tf 50 522 Td (Visibility leakage: 70/100) Tj ET
+BT /F1 11 Tf 50 505 Td (Executive evidence: Run the V2 GEO score engine after audit and prompt evidence exists.) Tj ET
+BT /F1 11 Tf 50 488 Td (\(Trust Layer\)) Tj ET
+BT /F1 11 Tf 50 471 Td (Executive evidence: Evaluated 0 competitor candidates against 7 real prompt responses.) Tj ET
+BT /F1 11 Tf 50 454 Td (\(Trust Layer; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 437 Td (Executive evidence: Generated 4 visibility opportunities from stored prompt, citation, and) Tj ET
+BT /F1 11 Tf 50 420 Td (audit evidence. \(Visibility Opportunity Engine V2; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 403 Td (Executive evidence: 7/7 real prompt responses did not mention OrcaTech. \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 386 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 369 Td (Executive evidence: Competitor names appeared 0 time\(s\) across the same response set.) Tj ET
+BT /F1 11 Tf 50 352 Td (\(Prompt Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 335 Td () Tj ET
+BT /F1 11 Tf 50 318 Td (2. GEO Score Breakdown) Tj ET
+BT /F1 11 Tf 50 301 Td (INSUFFICIENT_DATA: No V2 GEO score has been calculated yet.) Tj ET
+BT /F1 11 Tf 50 284 Td (Confidence: 0; Data source: Trust Layer; Last verified: 2026-06-08T07:17:49.002Z) Tj ET
+BT /F1 11 Tf 50 267 Td (Evidence: Run the V2 GEO score engine after audit and prompt evidence exists. \(Trust) Tj ET
+BT /F1 11 Tf 50 250 Td (Layer\)) Tj ET
+BT /F1 11 Tf 50 233 Td () Tj ET
+BT /F1 11 Tf 50 216 Td (3. Threat Analysis) Tj ET
+BT /F1 11 Tf 50 199 Td (INSUFFICIENT_DATA: No competitor had enough prompt, citation, or content evidence for a) Tj ET
+BT /F1 11 Tf 50 182 Td (reliable threat score.) Tj ET
+BT /F1 11 Tf 50 165 Td (Confidence: 0; Data source: Trust Layer; Last verified: 2026-06-08T07:17:49.037Z) Tj ET
+BT /F1 11 Tf 50 148 Td (Evidence: Evaluated 0 competitor candidates against 7 real prompt responses. \(Trust Layer;) Tj ET
+BT /F1 11 Tf 50 131 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 114 Td () Tj ET
+BT /F1 11 Tf 50 97 Td (4. Competitor Analysis) Tj ET
+BT /F1 11 Tf 50 80 Td (INSUFFICIENT_DATA: No competitor had enough prompt, citation, or content evidence for a) Tj ET
+BT /F1 11 Tf 50 63 Td (reliable threat score.) Tj ET
+endstream endobj
+5 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 6 0 R >> endobj
+6 0 obj << /Length 3716 >> stream
+BT /F1 11 Tf 50 760 Td (Confidence: 0; Data source: Trust Layer; Last verified: 2026-06-08T07:17:49.037Z) Tj ET
+BT /F1 11 Tf 50 743 Td (Evidence: Evaluated 0 competitor candidates against 7 real prompt responses. \(Trust Layer;) Tj ET
+BT /F1 11 Tf 50 726 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 709 Td () Tj ET
+BT /F1 11 Tf 50 692 Td (5. Visibility Opportunities) Tj ET
+BT /F1 11 Tf 50 675 Td (Target keyword coverage: score 55, expected gain 8, difficulty 35. Add the missing tracked) Tj ET
+BT /F1 11 Tf 50 658 Td (opportunity phrases naturally in headings and answer blocks.) Tj ET
+BT /F1 11 Tf 50 641 Td (Confidence: 78; Data source: GEO_AUDIT; Last verified: 2026-06-08T07:16:41.211Z) Tj ET
+BT /F1 11 Tf 50 624 Td (Evidence: Target keyword coverage failed with value 0/1. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 607 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 590 Td (llms-full.txt is available: score 55, expected gain 5, difficulty 35. Publish) Tj ET
+BT /F1 11 Tf 50 573 Td (llms-full.txt with complete AI-readable brand, service, and proof content.) Tj ET
+BT /F1 11 Tf 50 556 Td (Confidence: 78; Data source: GEO_AUDIT; Last verified: 2026-06-08T07:16:41.211Z) Tj ET
+BT /F1 11 Tf 50 539 Td (Evidence: llms-full.txt is available failed with value false. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 522 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 505 Td (Noscript fallback has meaningful content: score 55, expected gain 5, difficulty 35. Fix) Tj ET
+BT /F1 11 Tf 50 488 Td (the failed audit check: Noscript fallback has meaningful content.) Tj ET
+BT /F1 11 Tf 50 471 Td (Confidence: 78; Data source: GEO_AUDIT; Last verified: 2026-06-08T07:16:41.211Z) Tj ET
+BT /F1 11 Tf 50 454 Td (Evidence: Noscript fallback has meaningful content failed with value missing. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 437 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 420 Td (JavaScript footprint is not excessive: score 55, expected gain 5, difficulty 35. Fix the) Tj ET
+BT /F1 11 Tf 50 403 Td (failed audit check: JavaScript footprint is not excessive.) Tj ET
+BT /F1 11 Tf 50 386 Td (Confidence: 78; Data source: GEO_AUDIT; Last verified: 2026-06-08T07:16:41.211Z) Tj ET
+BT /F1 11 Tf 50 369 Td (Evidence: JavaScript footprint is not excessive failed with value 17 external / 17 KB) Tj ET
+BT /F1 11 Tf 50 352 Td (inline. \(GEO Audit; https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 335 Td () Tj ET
+BT /F1 11 Tf 50 318 Td (6. Citation Opportunities) Tj ET
+BT /F1 11 Tf 50 301 Td (INSUFFICIENT_DATA: No citation opportunities are stored yet.) Tj ET
+BT /F1 11 Tf 50 284 Td () Tj ET
+BT /F1 11 Tf 50 267 Td (7. Quick Wins) Tj ET
+BT /F1 11 Tf 50 250 Td (No 1-day evidence-backed actions available.) Tj ET
+BT /F1 11 Tf 50 233 Td (7-day #1: Target keyword coverage. Add the missing tracked opportunity phrases naturally) Tj ET
+BT /F1 11 Tf 50 216 Td (in headings and answer blocks.) Tj ET
+BT /F1 11 Tf 50 199 Td (Expected gain: 8; difficulty: 35; confidence: 78; source: GEO_AUDIT) Tj ET
+BT /F1 11 Tf 50 182 Td (Evidence: Target keyword coverage failed with value 0/1. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 165 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 148 Td (7-day #2: llms-full.txt is available. Publish llms-full.txt with complete AI-readable) Tj ET
+BT /F1 11 Tf 50 131 Td (brand, service, and proof content.) Tj ET
+BT /F1 11 Tf 50 114 Td (Expected gain: 5; difficulty: 35; confidence: 78; source: GEO_AUDIT) Tj ET
+BT /F1 11 Tf 50 97 Td (Evidence: llms-full.txt is available failed with value false. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 80 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 63 Td (7-day #3: Noscript fallback has meaningful content. Fix the failed audit check: Noscript) Tj ET
+endstream endobj
+7 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 8 0 R >> endobj
+8 0 obj << /Length 3461 >> stream
+BT /F1 11 Tf 50 760 Td (fallback has meaningful content.) Tj ET
+BT /F1 11 Tf 50 743 Td (Expected gain: 5; difficulty: 35; confidence: 78; source: GEO_AUDIT) Tj ET
+BT /F1 11 Tf 50 726 Td (Evidence: Noscript fallback has meaningful content failed with value missing. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 709 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 692 Td (7-day #4: JavaScript footprint is not excessive. Fix the failed audit check: JavaScript) Tj ET
+BT /F1 11 Tf 50 675 Td (footprint is not excessive.) Tj ET
+BT /F1 11 Tf 50 658 Td (Expected gain: 5; difficulty: 35; confidence: 78; source: GEO_AUDIT) Tj ET
+BT /F1 11 Tf 50 641 Td (Evidence: JavaScript footprint is not excessive failed with value 17 external / 17 KB) Tj ET
+BT /F1 11 Tf 50 624 Td (inline. \(GEO Audit; https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 607 Td (No 30-day evidence-backed actions available.) Tj ET
+BT /F1 11 Tf 50 590 Td () Tj ET
+BT /F1 11 Tf 50 573 Td (8. 30-Day Plan) Tj ET
+BT /F1 11 Tf 50 556 Td (No thirtyDay evidence-backed actions available.) Tj ET
+BT /F1 11 Tf 50 539 Td () Tj ET
+BT /F1 11 Tf 50 522 Td (9. 60-Day Plan) Tj ET
+BT /F1 11 Tf 50 505 Td (60-day #1: Target keyword coverage. Add the missing tracked opportunity phrases naturally) Tj ET
+BT /F1 11 Tf 50 488 Td (in headings and answer blocks.) Tj ET
+BT /F1 11 Tf 50 471 Td (Expected visibility gain: 8; difficulty: 35; confidence: 78) Tj ET
+BT /F1 11 Tf 50 454 Td (Evidence: Target keyword coverage failed with value 0/1. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 437 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 420 Td (60-day #2: llms-full.txt is available. Publish llms-full.txt with complete AI-readable) Tj ET
+BT /F1 11 Tf 50 403 Td (brand, service, and proof content.) Tj ET
+BT /F1 11 Tf 50 386 Td (Expected visibility gain: 5; difficulty: 35; confidence: 78) Tj ET
+BT /F1 11 Tf 50 369 Td (Evidence: llms-full.txt is available failed with value false. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 352 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 335 Td (60-day #3: Noscript fallback has meaningful content. Fix the failed audit check: Noscript) Tj ET
+BT /F1 11 Tf 50 318 Td (fallback has meaningful content.) Tj ET
+BT /F1 11 Tf 50 301 Td (Expected visibility gain: 5; difficulty: 35; confidence: 78) Tj ET
+BT /F1 11 Tf 50 284 Td (Evidence: Noscript fallback has meaningful content failed with value missing. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 267 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 250 Td (60-day #4: JavaScript footprint is not excessive. Fix the failed audit check: JavaScript) Tj ET
+BT /F1 11 Tf 50 233 Td (footprint is not excessive.) Tj ET
+BT /F1 11 Tf 50 216 Td (Expected visibility gain: 5; difficulty: 35; confidence: 78) Tj ET
+BT /F1 11 Tf 50 199 Td (Evidence: JavaScript footprint is not excessive failed with value 17 external / 17 KB) Tj ET
+BT /F1 11 Tf 50 182 Td (inline. \(GEO Audit; https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 165 Td () Tj ET
+BT /F1 11 Tf 50 148 Td (10. 90-Day Plan) Tj ET
+BT /F1 11 Tf 50 131 Td (INSUFFICIENT_DATA: No competitor had enough prompt, citation, or content evidence for a) Tj ET
+BT /F1 11 Tf 50 114 Td (reliable threat score.) Tj ET
+BT /F1 11 Tf 50 97 Td (Confidence: 0; Data source: Trust Layer; Last verified: 2026-06-08T07:17:49.037Z) Tj ET
+BT /F1 11 Tf 50 80 Td (Evidence: Evaluated 0 competitor candidates against 7 real prompt responses. \(Trust Layer;) Tj ET
+BT /F1 11 Tf 50 63 Td (https://orcatech.online\)) Tj ET
+endstream endobj
+9 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 10 0 R >> endobj
+10 0 obj << /Length 421 >> stream
+BT /F1 11 Tf 50 760 Td (INSUFFICIENT_DATA: Benchmark sample is too small for a trustworthy percentile.) Tj ET
+BT /F1 11 Tf 50 743 Td (Confidence: 0; Data source: Trust Layer; Last verified: 2026-06-08T07:17:49.044Z) Tj ET
+BT /F1 11 Tf 50 726 Td (Evidence: Found 1/2 comparable scored brand samples for software engineering in egypt.) Tj ET
+BT /F1 11 Tf 50 709 Td (\(Benchmark Trust Layer; https://orcatech.online\)) Tj ET
+endstream endobj
+11 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000133 00000 n 
+0000000260 00000 n 
+0000003412 00000 n 
+0000003539 00000 n 
+0000007307 00000 n 
+0000007434 00000 n 
+0000010947 00000 n 
+0000011075 00000 n 
+0000011548 00000 n 
+trailer << /Size 12 /Root 1 0 R >>
+startxref
+11619
+%%EOF

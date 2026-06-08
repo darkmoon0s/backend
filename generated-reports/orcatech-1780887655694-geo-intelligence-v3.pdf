@@ -1,0 +1,540 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R] /Count 12 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 4 0 R >> endobj
+4 0 obj << /Length 3523 >> stream
+BT /F1 11 Tf 50 760 Td (OrcaTech GEO Accuracy Report V3) Tj ET
+BT /F1 11 Tf 50 743 Td (Agency: Acme GEO Agency) Tj ET
+BT /F1 11 Tf 50 726 Td (Brand: OrcaTech) Tj ET
+BT /F1 11 Tf 50 709 Td (Website: https://orcatech.online) Tj ET
+BT /F1 11 Tf 50 692 Td (Generated: 2026-06-08T03:00:56.227Z) Tj ET
+BT /F1 11 Tf 50 675 Td (Report standard: V3 evidence-backed intelligence. Generic recommendations are excluded.) Tj ET
+BT /F1 11 Tf 50 658 Td () Tj ET
+BT /F1 11 Tf 50 641 Td (1. Executive Summary) Tj ET
+BT /F1 11 Tf 50 624 Td (OrcaTech V3 intelligence is generated only from stored audits, prompt runs, citations,) Tj ET
+BT /F1 11 Tf 50 607 Td (entity extraction, and competitor evidence.) Tj ET
+BT /F1 11 Tf 50 590 Td (GEO Score V3: 85; expected improvement potential: +16 points.) Tj ET
+BT /F1 11 Tf 50 573 Td (Threats: 3.) Tj ET
+BT /F1 11 Tf 50 556 Td (Opportunities: 11.) Tj ET
+BT /F1 11 Tf 50 539 Td (Confidence: 88; Data source: GEO_SCORE_V3; Last verified: 2026-06-08T03:00:56.108Z) Tj ET
+BT /F1 11 Tf 50 522 Td (Executive evidence: V3 score uses 6 weighted components totaling 100 possible points. \(GEO) Tj ET
+BT /F1 11 Tf 50 505 Td (Score Engine V3; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 488 Td (Executive evidence: 2 real prompt response\(s\) and 9 citation row\(s\) were evaluated.) Tj ET
+BT /F1 11 Tf 50 471 Td (\(Prompt Tracking + Citation Discovery; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 454 Td (Executive evidence: Schema readiness is 100/100 from the latest GEO audit. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 437 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 420 Td (Executive evidence: FAQ coverage is 100/100 from audit checks. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 403 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 386 Td (Executive evidence: Authority audit score is 84/100 and citation authority sample has 8) Tj ET
+BT /F1 11 Tf 50 369 Td (source\(s\). \(GEO Audit + Citation Authority; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 352 Td () Tj ET
+BT /F1 11 Tf 50 335 Td (2. GEO Score V3 Breakdown) Tj ET
+BT /F1 11 Tf 50 318 Td (Overall Score: 85) Tj ET
+BT /F1 11 Tf 50 301 Td (Expected Gain: +16) Tj ET
+BT /F1 11 Tf 50 284 Td (Why score is not higher: Entity coverage is limited where competitors are associated with) Tj ET
+BT /F1 11 Tf 50 267 Td (services or technologies the brand is not.) Tj ET
+BT /F1 11 Tf 50 250 Td (Confidence: 88; Data source: GEO_SCORE_V3; Last verified: 2026-06-08T03:00:56.108Z) Tj ET
+BT /F1 11 Tf 50 233 Td (Schema: 15/15 points; raw 100/100; improvement potential +0.) Tj ET
+BT /F1 11 Tf 50 216 Td (Reasoning: latest audit schema readiness is 100/100) Tj ET
+BT /F1 11 Tf 50 199 Td (Evidence: Schema readiness is 100/100 from the latest GEO audit. \(GEO Audit;) Tj ET
+BT /F1 11 Tf 50 182 Td (https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 165 Td (FAQ: 15/15 points; raw 100/100; improvement potential +0.) Tj ET
+BT /F1 11 Tf 50 148 Td (Reasoning: latest audit FAQ coverage is 100/100) Tj ET
+BT /F1 11 Tf 50 131 Td (Evidence: FAQ coverage is 100/100 from audit checks. \(GEO Audit; https://orcatech.online/\)) Tj ET
+BT /F1 11 Tf 50 114 Td (Authority: 12.6/15 points; raw 84/100; improvement potential +2.4.) Tj ET
+BT /F1 11 Tf 50 97 Td (Reasoning: authority combines audit authority and citation-source authority signals) Tj ET
+BT /F1 11 Tf 50 80 Td (Evidence: Authority audit score is 84/100 and citation authority sample has 8 source\(s\).) Tj ET
+BT /F1 11 Tf 50 63 Td (\(GEO Audit + Citation Authority; https://orcatech.online\)) Tj ET
+endstream endobj
+5 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 6 0 R >> endobj
+6 0 obj << /Length 3967 >> stream
+BT /F1 11 Tf 50 760 Td (Entities: 7.5/15 points; raw 50/100; improvement potential +7.5.) Tj ET
+BT /F1 11 Tf 50 743 Td (Reasoning: entity coverage is 50/100 across extracted brand, service, technology,) Tj ET
+BT /F1 11 Tf 50 726 Td (location, industry, and competitor terms) Tj ET
+BT /F1 11 Tf 50 709 Td (Evidence: Entity coverage is 50/100 from extracted response entities. \(Entity Intelligence) Tj ET
+BT /F1 11 Tf 50 692 Td (Engine; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 675 Td (Content: 19.2/20 points; raw 96/100; improvement potential +0.8.) Tj ET
+BT /F1 11 Tf 50 658 Td (Reasoning: content combines audit content coverage with prompt coverage outcomes) Tj ET
+BT /F1 11 Tf 50 641 Td (Evidence: Content audit score is 96/100 and prompt coverage score is 53/100. \(GEO Audit +) Tj ET
+BT /F1 11 Tf 50 624 Td (Prompt Coverage; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 607 Td (Citations: 15.2/20 points; raw 76/100; improvement potential +4.8.) Tj ET
+BT /F1 11 Tf 50 590 Td (Reasoning: citation score combines audit citation readiness and citation impact evidence) Tj ET
+BT /F1 11 Tf 50 573 Td (Evidence: Citation readiness is 76/100 and citation authority impact average is 43/100.) Tj ET
+BT /F1 11 Tf 50 556 Td (\(GEO Audit + Citation Authority; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 539 Td () Tj ET
+BT /F1 11 Tf 50 522 Td (3. Citation Authority) Tj ET
+BT /F1 11 Tf 50 505 Td (sama.gov.sa: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 488 Td (resource on sama.gov.sa; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 471 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 454 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 437 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 420 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 403 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 386 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 369 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://sama.gov.sa/\)) Tj ET
+BT /F1 11 Tf 50 352 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 335 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 318 Td (saudiaramco.com: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 301 Td (resource on saudiaramco.com; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 284 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 267 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 250 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 233 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 216 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 199 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 182 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 165 Td (https://saudiaramco.com/\)) Tj ET
+BT /F1 11 Tf 50 148 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 131 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 114 Td (stc.com.sa: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 97 Td (resource on stc.com.sa; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 80 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 63 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+endstream endobj
+7 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 8 0 R >> endobj
+8 0 obj << /Length 4032 >> stream
+BT /F1 11 Tf 50 760 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 743 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 726 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 709 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 692 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://stc.com.sa/\)) Tj ET
+BT /F1 11 Tf 50 675 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 658 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 641 Td (mcit.gov.sa: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 624 Td (resource on mcit.gov.sa; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 607 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 590 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 573 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 556 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 539 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 522 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 505 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://mcit.gov.sa/\)) Tj ET
+BT /F1 11 Tf 50 488 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 471 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 454 Td (cyberoam.com: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 437 Td (resource on cyberoam.com; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 420 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 403 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 386 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 369 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 352 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 335 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 318 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 301 Td (https://cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 284 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 267 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 250 Td (checkpoint.com: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 233 Td (resource on checkpoint.com; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 216 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 199 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 182 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 165 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 148 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 131 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 114 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 97 Td (https://checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 80 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 63 Td (https://orcatech.online\)) Tj ET
+endstream endobj
+9 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 10 0 R >> endobj
+10 0 obj << /Length 3766 >> stream
+BT /F1 11 Tf 50 760 Td (paloaltonetworks.com: value 47, difficulty 51, impact 43. Earn a brand mention or) Tj ET
+BT /F1 11 Tf 50 743 Td (referenced resource on paloaltonetworks.com; it has enough authority and relevance to) Tj ET
+BT /F1 11 Tf 50 726 Td (support AI citation readiness.) Tj ET
+BT /F1 11 Tf 50 709 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 692 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 675 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 658 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 641 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 624 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 607 Td (https://paloaltonetworks.com/\)) Tj ET
+BT /F1 11 Tf 50 590 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 573 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 556 Td (orcatech.com: value 47, difficulty 51, impact 43. Earn a brand mention or referenced) Tj ET
+BT /F1 11 Tf 50 539 Td (resource on orcatech.com; it has enough authority and relevance to support AI citation) Tj ET
+BT /F1 11 Tf 50 522 Td (readiness.) Tj ET
+BT /F1 11 Tf 50 505 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_AUTHORITY_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 488 Td (2026-06-08T02:17:32.496Z) Tj ET
+BT /F1 11 Tf 50 471 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 454 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 437 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 420 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 403 Td (https://orcatech.com/\)) Tj ET
+BT /F1 11 Tf 50 386 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 369 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 352 Td () Tj ET
+BT /F1 11 Tf 50 335 Td (4. Entity Intelligence) Tj ET
+BT /F1 11 Tf 50 318 Td (Entity coverage score: 50; dominance risk: 0; gaps: 0) Tj ET
+BT /F1 11 Tf 50 301 Td (cybersecurity \(SERVICE\): coverage 50, dominance 0, gap no.) Tj ET
+BT /F1 11 Tf 50 284 Td (Confidence: 65; Data source: PROMPT_TRACKING + AUDIT_TERMS; Last verified:) Tj ET
+BT /F1 11 Tf 50 267 Td (2026-06-08T03:00:56.167Z) Tj ET
+BT /F1 11 Tf 50 250 Td (Evidence: cybersecurity appeared in 2 prompt response\(s\). \(Entity Extraction;) Tj ET
+BT /F1 11 Tf 50 233 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 216 Td (Evidence: OrcaTech was associated with cybersecurity in 1 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 199 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 182 Td (Evidence: Competitors dominated cybersecurity in 0 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 165 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 148 Td (Saudi Arabia \(SERVICE\): coverage 50, dominance 0, gap no.) Tj ET
+BT /F1 11 Tf 50 131 Td (Confidence: 65; Data source: PROMPT_TRACKING + AUDIT_TERMS; Last verified:) Tj ET
+BT /F1 11 Tf 50 114 Td (2026-06-08T03:00:56.167Z) Tj ET
+BT /F1 11 Tf 50 97 Td (Evidence: Saudi Arabia appeared in 2 prompt response\(s\). \(Entity Extraction;) Tj ET
+BT /F1 11 Tf 50 80 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 63 Td (Evidence: OrcaTech was associated with Saudi Arabia in 1 response\(s\). \(Prompt Tracking;) Tj ET
+endstream endobj
+11 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 12 0 R >> endobj
+12 0 obj << /Length 3509 >> stream
+BT /F1 11 Tf 50 760 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 743 Td (Evidence: Competitors dominated Saudi Arabia in 0 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 726 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 709 Td (Saudi \(SERVICE\): coverage 50, dominance 0, gap no.) Tj ET
+BT /F1 11 Tf 50 692 Td (Confidence: 65; Data source: PROMPT_TRACKING + AUDIT_TERMS; Last verified:) Tj ET
+BT /F1 11 Tf 50 675 Td (2026-06-08T03:00:56.168Z) Tj ET
+BT /F1 11 Tf 50 658 Td (Evidence: Saudi appeared in 2 prompt response\(s\). \(Entity Extraction;) Tj ET
+BT /F1 11 Tf 50 641 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 624 Td (Evidence: OrcaTech was associated with Saudi in 1 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 607 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 590 Td (Evidence: Competitors dominated Saudi in 0 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 573 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 556 Td (Arabia \(SERVICE\): coverage 50, dominance 0, gap no.) Tj ET
+BT /F1 11 Tf 50 539 Td (Confidence: 65; Data source: PROMPT_TRACKING + AUDIT_TERMS; Last verified:) Tj ET
+BT /F1 11 Tf 50 522 Td (2026-06-08T03:00:56.168Z) Tj ET
+BT /F1 11 Tf 50 505 Td (Evidence: Arabia appeared in 2 prompt response\(s\). \(Entity Extraction;) Tj ET
+BT /F1 11 Tf 50 488 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 471 Td (Evidence: OrcaTech was associated with Arabia in 1 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 454 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 437 Td (Evidence: Competitors dominated Arabia in 0 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 420 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 403 Td (security \(SERVICE\): coverage 50, dominance 0, gap no.) Tj ET
+BT /F1 11 Tf 50 386 Td (Confidence: 65; Data source: PROMPT_TRACKING + AUDIT_TERMS; Last verified:) Tj ET
+BT /F1 11 Tf 50 369 Td (2026-06-08T03:00:56.168Z) Tj ET
+BT /F1 11 Tf 50 352 Td (Evidence: security appeared in 2 prompt response\(s\). \(Entity Extraction;) Tj ET
+BT /F1 11 Tf 50 335 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 318 Td (Evidence: OrcaTech was associated with security in 1 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 301 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 284 Td (Evidence: Competitors dominated security in 0 response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 267 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 250 Td () Tj ET
+BT /F1 11 Tf 50 233 Td (5. Prompt Coverage) Tj ET
+BT /F1 11 Tf 50 216 Td (Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for cybersecurity in Saudi) Tj ET
+BT /F1 11 Tf 50 199 Td (Arabia. Include source URLs.: importance 91, opportunity 72, revenue potential HIGH. Brand) Tj ET
+BT /F1 11 Tf 50 182 Td (appearing: yes) Tj ET
+BT /F1 11 Tf 50 165 Td (Confidence: 83; Data source: PROMPT_TRACKING + CITATION_EXTRACTION; Last verified:) Tj ET
+BT /F1 11 Tf 50 148 Td (2026-06-08T02:17:05.080Z) Tj ET
+BT /F1 11 Tf 50 131 Td (Evidence: Prompt has 1 stored real response\(s\). \(Prompt Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 114 Td (Evidence: OrcaTech appeared in this prompt set. \(Prompt Coverage Engine;) Tj ET
+BT /F1 11 Tf 50 97 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 80 Td (Evidence: 3 competitor\(s\) appeared; 5 citation source\(s\) were extracted. \(Prompt Tracking) Tj ET
+BT /F1 11 Tf 50 63 Td (+ Citation Extraction; https://orcatech.online\)) Tj ET
+endstream endobj
+13 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 14 0 R >> endobj
+14 0 obj << /Length 4021 >> stream
+BT /F1 11 Tf 50 760 Td (Best cybersecurity company in Saudi Arabia for AI security and regulated banks. Include) Tj ET
+BT /F1 11 Tf 50 743 Td (source URLs.: importance 97, opportunity 71, revenue potential HIGH. Brand appearing: no) Tj ET
+BT /F1 11 Tf 50 726 Td (Confidence: 79; Data source: PROMPT_TRACKING + CITATION_EXTRACTION; Last verified:) Tj ET
+BT /F1 11 Tf 50 709 Td (2026-06-08T02:17:02.325Z) Tj ET
+BT /F1 11 Tf 50 692 Td (Evidence: Prompt has 1 stored real response\(s\). \(Prompt Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 675 Td (Evidence: OrcaTech did not appear in this prompt set. \(Prompt Coverage Engine;) Tj ET
+BT /F1 11 Tf 50 658 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 641 Td (Evidence: 0 competitor\(s\) appeared; 4 citation source\(s\) were extracted. \(Prompt Tracking) Tj ET
+BT /F1 11 Tf 50 624 Td (+ Citation Extraction; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 607 Td () Tj ET
+BT /F1 11 Tf 50 590 Td (6. Threat Engine V2) Tj ET
+BT /F1 11 Tf 50 573 Td (Palo Alto Networks: LOW, score 13, impact 7. Palo Alto Networks is visible in tracked AI) Tj ET
+BT /F1 11 Tf 50 556 Td (responses; Palo Alto Networks owns trusted source citations.) Tj ET
+BT /F1 11 Tf 50 539 Td (Confidence: 79; Data source: THREAT_ENGINE_V2 + PROMPT_COVERAGE + CITATION_AUTHORITY +) Tj ET
+BT /F1 11 Tf 50 522 Td (ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.227Z) Tj ET
+BT /F1 11 Tf 50 505 Td (Evidence: Palo Alto Networks appeared in 1 real prompt response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 488 Td (https://www.paloaltonetworks.com/\)) Tj ET
+BT /F1 11 Tf 50 471 Td (Evidence: Palo Alto Networks dominated 0 prompt response\(s\) where OrcaTech was absent.) Tj ET
+BT /F1 11 Tf 50 454 Td (\(Prompt Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 437 Td (Evidence: paloaltonetworks.com owned 1 citation\(s\) in stored AI responses. \(Citation) Tj ET
+BT /F1 11 Tf 50 420 Td (Discovery; https://www.paloaltonetworks.com/\)) Tj ET
+BT /F1 11 Tf 50 403 Td (Evidence: 0 prompt/content opportunity record\(s\) reference this competitor. \(Prompt) Tj ET
+BT /F1 11 Tf 50 386 Td (Discovery + Content Gaps; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 369 Td (Check Point: LOW, score 13, impact 7. Check Point is visible in tracked AI responses;) Tj ET
+BT /F1 11 Tf 50 352 Td (Check Point owns trusted source citations.) Tj ET
+BT /F1 11 Tf 50 335 Td (Confidence: 79; Data source: THREAT_ENGINE_V2 + PROMPT_COVERAGE + CITATION_AUTHORITY +) Tj ET
+BT /F1 11 Tf 50 318 Td (ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.227Z) Tj ET
+BT /F1 11 Tf 50 301 Td (Evidence: Check Point appeared in 1 real prompt response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 284 Td (https://www.checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 267 Td (Evidence: Check Point dominated 0 prompt response\(s\) where OrcaTech was absent. \(Prompt) Tj ET
+BT /F1 11 Tf 50 250 Td (Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 233 Td (Evidence: checkpoint.com owned 1 citation\(s\) in stored AI responses. \(Citation Discovery;) Tj ET
+BT /F1 11 Tf 50 216 Td (https://www.checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 199 Td (Evidence: 0 prompt/content opportunity record\(s\) reference this competitor. \(Prompt) Tj ET
+BT /F1 11 Tf 50 182 Td (Discovery + Content Gaps; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 165 Td (Cyberoam: LOW, score 13, impact 7. Cyberoam is visible in tracked AI responses; Cyberoam) Tj ET
+BT /F1 11 Tf 50 148 Td (owns trusted source citations.) Tj ET
+BT /F1 11 Tf 50 131 Td (Confidence: 79; Data source: THREAT_ENGINE_V2 + PROMPT_COVERAGE + CITATION_AUTHORITY +) Tj ET
+BT /F1 11 Tf 50 114 Td (ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.227Z) Tj ET
+BT /F1 11 Tf 50 97 Td (Evidence: Cyberoam appeared in 1 real prompt response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 80 Td (https://www.cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 63 Td (Evidence: Cyberoam dominated 0 prompt response\(s\) where OrcaTech was absent. \(Prompt) Tj ET
+endstream endobj
+15 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 16 0 R >> endobj
+16 0 obj << /Length 4073 >> stream
+BT /F1 11 Tf 50 760 Td (Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 743 Td (Evidence: cyberoam.com owned 1 citation\(s\) in stored AI responses. \(Citation Discovery;) Tj ET
+BT /F1 11 Tf 50 726 Td (https://www.cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 709 Td (Evidence: 0 prompt/content opportunity record\(s\) reference this competitor. \(Prompt) Tj ET
+BT /F1 11 Tf 50 692 Td (Discovery + Content Gaps; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 675 Td () Tj ET
+BT /F1 11 Tf 50 658 Td (7. Opportunity Engine V3) Tj ET
+BT /F1 11 Tf 50 641 Td (Best cybersecurity company in Saudi Arabia for regulated banks: expected gain 60,) Tj ET
+BT /F1 11 Tf 50 624 Td (difficulty 70, revenue potential HIGH, quick win no. Stored prompt, citation, or audit) Tj ET
+BT /F1 11 Tf 50 607 Td (evidence supports this opportunity; no provider-only assumption is used.) Tj ET
+BT /F1 11 Tf 50 590 Td (Confidence: 85; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 573 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 556 Td (Evidence: OrcaTech is a professional web development and cybersecurity company serving) Tj ET
+BT /F1 11 Tf 50 539 Td (businesses in Egypt, Saudi Arabia, and worldwide. \(AI prompt discovery\)) Tj ET
+BT /F1 11 Tf 50 522 Td (Evidence: OrcaTech provides SOC services for regulated banks in Saudi Arabia. \(AI prompt) Tj ET
+BT /F1 11 Tf 50 505 Td (discovery\)) Tj ET
+BT /F1 11 Tf 50 488 Td (Evidence: Prompt generated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 471 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 454 Td (Earn citation on sama.gov.sa: expected gain 35, difficulty 51, revenue potential MEDIUM,) Tj ET
+BT /F1 11 Tf 50 437 Td (quick win no. sama.gov.sa has authority/relevance evidence and competitor presence that the) Tj ET
+BT /F1 11 Tf 50 420 Td (brand has not matched.) Tj ET
+BT /F1 11 Tf 50 403 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 386 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 369 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 352 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 335 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 318 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://sama.gov.sa/\)) Tj ET
+BT /F1 11 Tf 50 301 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 284 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 267 Td (Earn citation on saudiaramco.com: expected gain 35, difficulty 51, revenue potential) Tj ET
+BT /F1 11 Tf 50 250 Td (MEDIUM, quick win no. saudiaramco.com has authority/relevance evidence and competitor) Tj ET
+BT /F1 11 Tf 50 233 Td (presence that the brand has not matched.) Tj ET
+BT /F1 11 Tf 50 216 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 199 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 182 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 165 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 148 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 131 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 114 Td (https://saudiaramco.com/\)) Tj ET
+BT /F1 11 Tf 50 97 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 80 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 63 Td (Earn citation on stc.com.sa: expected gain 35, difficulty 51, revenue potential MEDIUM,) Tj ET
+endstream endobj
+17 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 18 0 R >> endobj
+18 0 obj << /Length 4320 >> stream
+BT /F1 11 Tf 50 760 Td (quick win no. stc.com.sa has authority/relevance evidence and competitor presence that the) Tj ET
+BT /F1 11 Tf 50 743 Td (brand has not matched.) Tj ET
+BT /F1 11 Tf 50 726 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 709 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 692 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 675 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 658 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 641 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://stc.com.sa/\)) Tj ET
+BT /F1 11 Tf 50 624 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 607 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 590 Td (Earn citation on mcit.gov.sa: expected gain 35, difficulty 51, revenue potential MEDIUM,) Tj ET
+BT /F1 11 Tf 50 573 Td (quick win no. mcit.gov.sa has authority/relevance evidence and competitor presence that the) Tj ET
+BT /F1 11 Tf 50 556 Td (brand has not matched.) Tj ET
+BT /F1 11 Tf 50 539 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 522 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 505 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 488 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 471 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 454 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://mcit.gov.sa/\)) Tj ET
+BT /F1 11 Tf 50 437 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 420 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 403 Td (Earn citation on cyberoam.com: expected gain 35, difficulty 51, revenue potential MEDIUM,) Tj ET
+BT /F1 11 Tf 50 386 Td (quick win no. cyberoam.com has authority/relevance evidence and competitor presence that the) Tj ET
+BT /F1 11 Tf 50 369 Td (brand has not matched.) Tj ET
+BT /F1 11 Tf 50 352 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 335 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 318 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 301 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 284 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 267 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 250 Td (https://cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 233 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 216 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 199 Td (Earn citation on checkpoint.com: expected gain 35, difficulty 51, revenue potential) Tj ET
+BT /F1 11 Tf 50 182 Td (MEDIUM, quick win no. checkpoint.com has authority/relevance evidence and competitor) Tj ET
+BT /F1 11 Tf 50 165 Td (presence that the brand has not matched.) Tj ET
+BT /F1 11 Tf 50 148 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 131 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 114 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 97 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 80 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 63 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+endstream endobj
+19 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 20 0 R >> endobj
+20 0 obj << /Length 3927 >> stream
+BT /F1 11 Tf 50 760 Td (https://checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 743 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 726 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 709 Td (Earn citation on paloaltonetworks.com: expected gain 35, difficulty 51, revenue potential) Tj ET
+BT /F1 11 Tf 50 692 Td (MEDIUM, quick win no. paloaltonetworks.com has authority/relevance evidence and competitor) Tj ET
+BT /F1 11 Tf 50 675 Td (presence that the brand has not matched.) Tj ET
+BT /F1 11 Tf 50 658 Td (Confidence: 82; Data source: OPPORTUNITY_ENGINE_V3 + PROMPT_COVERAGE + CITATION_AUTHORITY) Tj ET
+BT /F1 11 Tf 50 641 Td (+ ENTITY_INTELLIGENCE; Last verified: 2026-06-08T03:00:56.215Z) Tj ET
+BT /F1 11 Tf 50 624 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 607 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 590 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 573 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 556 Td (https://paloaltonetworks.com/\)) Tj ET
+BT /F1 11 Tf 50 539 Td (Evidence: Citation source evaluated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 522 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 505 Td () Tj ET
+BT /F1 11 Tf 50 488 Td (8. Competitor Intelligence Cards) Tj ET
+BT /F1 11 Tf 50 471 Td (Palo Alto Networks: GEO 18, visibility 8, citation 0, prompt dominance 50, entity coverage) Tj ET
+BT /F1 11 Tf 50 454 Td (0. Palo Alto Networks is visible in tracked AI responses; Palo Alto Networks owns trusted) Tj ET
+BT /F1 11 Tf 50 437 Td (source citations.) Tj ET
+BT /F1 11 Tf 50 420 Td (Confidence: 84; Data source: COMPETITOR_INTELLIGENCE_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 403 Td (2026-06-08T03:00:56.206Z) Tj ET
+BT /F1 11 Tf 50 386 Td (Evidence: Palo Alto Networks appeared in 1 real prompt response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 369 Td (https://www.paloaltonetworks.com/\)) Tj ET
+BT /F1 11 Tf 50 352 Td (Evidence: Palo Alto Networks dominated 0 prompt response\(s\) where OrcaTech was absent.) Tj ET
+BT /F1 11 Tf 50 335 Td (\(Prompt Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 318 Td (Evidence: paloaltonetworks.com owned 1 citation\(s\) in stored AI responses. \(Citation) Tj ET
+BT /F1 11 Tf 50 301 Td (Discovery; https://www.paloaltonetworks.com/\)) Tj ET
+BT /F1 11 Tf 50 284 Td (Evidence: 0 prompt/content opportunity record\(s\) reference this competitor. \(Prompt) Tj ET
+BT /F1 11 Tf 50 267 Td (Discovery + Content Gaps; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 250 Td (Check Point: GEO 18, visibility 8, citation 0, prompt dominance 50, entity coverage 0.) Tj ET
+BT /F1 11 Tf 50 233 Td (Check Point is visible in tracked AI responses; Check Point owns trusted source citations.) Tj ET
+BT /F1 11 Tf 50 216 Td (Confidence: 84; Data source: COMPETITOR_INTELLIGENCE_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 199 Td (2026-06-08T03:00:56.206Z) Tj ET
+BT /F1 11 Tf 50 182 Td (Evidence: Check Point appeared in 1 real prompt response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 165 Td (https://www.checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 148 Td (Evidence: Check Point dominated 0 prompt response\(s\) where OrcaTech was absent. \(Prompt) Tj ET
+BT /F1 11 Tf 50 131 Td (Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 114 Td (Evidence: checkpoint.com owned 1 citation\(s\) in stored AI responses. \(Citation Discovery;) Tj ET
+BT /F1 11 Tf 50 97 Td (https://www.checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 80 Td (Evidence: 0 prompt/content opportunity record\(s\) reference this competitor. \(Prompt) Tj ET
+BT /F1 11 Tf 50 63 Td (Discovery + Content Gaps; https://orcatech.online\)) Tj ET
+endstream endobj
+21 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 22 0 R >> endobj
+22 0 obj << /Length 3873 >> stream
+BT /F1 11 Tf 50 760 Td (Cyberoam: GEO 18, visibility 8, citation 0, prompt dominance 50, entity coverage 0.) Tj ET
+BT /F1 11 Tf 50 743 Td (Cyberoam is visible in tracked AI responses; Cyberoam owns trusted source citations.) Tj ET
+BT /F1 11 Tf 50 726 Td (Confidence: 84; Data source: COMPETITOR_INTELLIGENCE_ENGINE; Last verified:) Tj ET
+BT /F1 11 Tf 50 709 Td (2026-06-08T03:00:56.206Z) Tj ET
+BT /F1 11 Tf 50 692 Td (Evidence: Cyberoam appeared in 1 real prompt response\(s\). \(Prompt Tracking;) Tj ET
+BT /F1 11 Tf 50 675 Td (https://www.cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 658 Td (Evidence: Cyberoam dominated 0 prompt response\(s\) where OrcaTech was absent. \(Prompt) Tj ET
+BT /F1 11 Tf 50 641 Td (Tracking; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 624 Td (Evidence: cyberoam.com owned 1 citation\(s\) in stored AI responses. \(Citation Discovery;) Tj ET
+BT /F1 11 Tf 50 607 Td (https://www.cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 590 Td (Evidence: 0 prompt/content opportunity record\(s\) reference this competitor. \(Prompt) Tj ET
+BT /F1 11 Tf 50 573 Td (Discovery + Content Gaps; https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 556 Td () Tj ET
+BT /F1 11 Tf 50 539 Td (9. 30-Day Evidence-Backed Plan) Tj ET
+BT /F1 11 Tf 50 522 Td (Priority #1: Best cybersecurity company in Saudi Arabia for regulated banks) Tj ET
+BT /F1 11 Tf 50 505 Td (Why: Stored prompt, citation, or audit evidence supports this opportunity; no) Tj ET
+BT /F1 11 Tf 50 488 Td (provider-only assumption is used.) Tj ET
+BT /F1 11 Tf 50 471 Td (Expected gain: 60; Difficulty: 70; Revenue potential: HIGH; Confidence: 85) Tj ET
+BT /F1 11 Tf 50 454 Td (Evidence: OrcaTech is a professional web development and cybersecurity company serving) Tj ET
+BT /F1 11 Tf 50 437 Td (businesses in Egypt, Saudi Arabia, and worldwide. \(AI prompt discovery\)) Tj ET
+BT /F1 11 Tf 50 420 Td (Evidence: OrcaTech provides SOC services for regulated banks in Saudi Arabia. \(AI prompt) Tj ET
+BT /F1 11 Tf 50 403 Td (discovery\)) Tj ET
+BT /F1 11 Tf 50 386 Td (Evidence: Prompt generated for Cybersecurity in Saudi Arabia. \(Brand Profile;) Tj ET
+BT /F1 11 Tf 50 369 Td (https://orcatech.online\)) Tj ET
+BT /F1 11 Tf 50 352 Td (Priority #2: Earn citation on sama.gov.sa) Tj ET
+BT /F1 11 Tf 50 335 Td (Why: sama.gov.sa has authority/relevance evidence and competitor presence that the brand) Tj ET
+BT /F1 11 Tf 50 318 Td (has not matched.) Tj ET
+BT /F1 11 Tf 50 301 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 284 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 267 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 250 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 233 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://sama.gov.sa/\)) Tj ET
+BT /F1 11 Tf 50 216 Td (Priority #3: Earn citation on saudiaramco.com) Tj ET
+BT /F1 11 Tf 50 199 Td (Why: saudiaramco.com has authority/relevance evidence and competitor presence that the) Tj ET
+BT /F1 11 Tf 50 182 Td (brand has not matched.) Tj ET
+BT /F1 11 Tf 50 165 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 148 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 131 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 114 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 97 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 80 Td (https://saudiaramco.com/\)) Tj ET
+BT /F1 11 Tf 50 63 Td (Priority #4: Earn citation on stc.com.sa) Tj ET
+endstream endobj
+23 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 24 0 R >> endobj
+24 0 obj << /Length 4119 >> stream
+BT /F1 11 Tf 50 760 Td (Why: stc.com.sa has authority/relevance evidence and competitor presence that the brand) Tj ET
+BT /F1 11 Tf 50 743 Td (has not matched.) Tj ET
+BT /F1 11 Tf 50 726 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 709 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 692 Td (Evidence: Prompts: Best cybersecurity company in Saudi Arabia for AI security and) Tj ET
+BT /F1 11 Tf 50 675 Td (regulated banks. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 658 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://stc.com.sa/\)) Tj ET
+BT /F1 11 Tf 50 641 Td (Priority #5: Earn citation on mcit.gov.sa) Tj ET
+BT /F1 11 Tf 50 624 Td (Why: mcit.gov.sa has authority/relevance evidence and competitor presence that the brand) Tj ET
+BT /F1 11 Tf 50 607 Td (has not matched.) Tj ET
+BT /F1 11 Tf 50 590 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 573 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 556 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 539 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 522 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation; https://mcit.gov.sa/\)) Tj ET
+BT /F1 11 Tf 50 505 Td (Priority #6: Earn citation on cyberoam.com) Tj ET
+BT /F1 11 Tf 50 488 Td (Why: cyberoam.com has authority/relevance evidence and competitor presence that the brand) Tj ET
+BT /F1 11 Tf 50 471 Td (has not matched.) Tj ET
+BT /F1 11 Tf 50 454 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 437 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 420 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 403 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 386 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 369 Td (https://cyberoam.com/\)) Tj ET
+BT /F1 11 Tf 50 352 Td (Priority #7: Earn citation on checkpoint.com) Tj ET
+BT /F1 11 Tf 50 335 Td (Why: checkpoint.com has authority/relevance evidence and competitor presence that the) Tj ET
+BT /F1 11 Tf 50 318 Td (brand has not matched.) Tj ET
+BT /F1 11 Tf 50 301 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 284 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 267 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 250 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 233 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 216 Td (https://checkpoint.com/\)) Tj ET
+BT /F1 11 Tf 50 199 Td (Priority #8: Earn citation on paloaltonetworks.com) Tj ET
+BT /F1 11 Tf 50 182 Td (Why: paloaltonetworks.com has authority/relevance evidence and competitor presence that) Tj ET
+BT /F1 11 Tf 50 165 Td (the brand has not matched.) Tj ET
+BT /F1 11 Tf 50 148 Td (Expected gain: 35; Difficulty: 51; Revenue potential: MEDIUM; Confidence: 82) Tj ET
+BT /F1 11 Tf 50 131 Td (Evidence: Domain appeared 1 time\(s\) in real provider responses. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 114 Td (Evidence: Prompts: Compare OrcaTech, Palo Alto Networks, Check Point, and Cyberoam for) Tj ET
+BT /F1 11 Tf 50 97 Td (cybersecurity in Saudi Arabia. Include source URLs. \(Citation discovery\)) Tj ET
+BT /F1 11 Tf 50 80 Td (Evidence: Domain verification returned HTTP 200. \(Domain Validation;) Tj ET
+BT /F1 11 Tf 50 63 Td (https://paloaltonetworks.com/\)) Tj ET
+endstream endobj
+25 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 27 0 R >> >> /Contents 26 0 R >> endobj
+26 0 obj << /Length 288 >> stream
+BT /F1 11 Tf 50 760 Td () Tj ET
+BT /F1 11 Tf 50 743 Td (10. Trust Notes) Tj ET
+BT /F1 11 Tf 50 726 Td (Any section marked INSUFFICIENT_DATA should not be used for business decisions until more) Tj ET
+BT /F1 11 Tf 50 709 Td (prompt, citation, audit, or entity evidence is collected.) Tj ET
+endstream endobj
+27 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+xref
+0 28
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000190 00000 n 
+0000000317 00000 n 
+0000003892 00000 n 
+0000004019 00000 n 
+0000008038 00000 n 
+0000008165 00000 n 
+0000012249 00000 n 
+0000012377 00000 n 
+0000016196 00000 n 
+0000016325 00000 n 
+0000019887 00000 n 
+0000020016 00000 n 
+0000024090 00000 n 
+0000024219 00000 n 
+0000028345 00000 n 
+0000028474 00000 n 
+0000032847 00000 n 
+0000032976 00000 n 
+0000036956 00000 n 
+0000037085 00000 n 
+0000041011 00000 n 
+0000041140 00000 n 
+0000045312 00000 n 
+0000045441 00000 n 
+0000045781 00000 n 
+trailer << /Size 28 /Root 1 0 R >>
+startxref
+45852
+%%EOF

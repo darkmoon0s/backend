@@ -1,0 +1,47 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+5 0 obj << /Length 2778 >> stream
+BT /F1 12 Tf 50 760 Td (Analyst Report 20260602183015) Tj ET
+BT /F1 12 Tf 50 736 Td (Agency: Full Product Audit Agency 20260602183015) Tj ET
+BT /F1 12 Tf 50 712 Td (Branding color: #00f5d4) Tj ET
+BT /F1 12 Tf 50 688 Td (Logo URL: https://insight-ai.local/logo.png) Tj ET
+BT /F1 12 Tf 50 664 Td (Brand: OrcaTech Product 20260602183015) Tj ET
+BT /F1 12 Tf 50 640 Td (Generated: 2026-06-02T18:32:07.501Z) Tj ET
+BT /F1 12 Tf 50 616 Td (GEO Score: 0) Tj ET
+BT /F1 12 Tf 50 592 Td (Share of Voice: 0%) Tj ET
+BT /F1 12 Tf 50 568 Td (Brand Mentions: 0) Tj ET
+BT /F1 12 Tf 50 544 Td (Citations: 10) Tj ET
+BT /F1 12 Tf 50 520 Td (Recommendations: OrcaTech Product 20260602183015 GEO action plan: Issues found: OrcaTech is) Tj ET
+BT /F1 12 Tf 50 496 Td (completely omitted from the AI search response, resulting in 0% share of voice for this) Tj ET
+BT /F1 12 Tf 50 472 Td (high-intent query.; The AI response heavily prioritizes government-backed entities \(SITE,) Tj ET
+BT /F1 12 Tf 50 448 Td (Cyberani\) and established telecom arms \(sirar by stc\), showing a bias toward massive local) Tj ET
+BT /F1 12 Tf 50 424 Td (legacy players.; OrcaTech lacks association with key Saudi cybersecurity regulatory terms) Tj ET
+BT /F1 12 Tf 50 400 Td (like 'NCA compliance' within the AI's retrieval model.; Content gap: Comprehensive,) Tj ET
+BT /F1 12 Tf 50 376 Td (downloadable guides on achieving NCA ECC \(Essential Cybersecurity Controls\) and CSCC \(Cloud) Tj ET
+BT /F1 12 Tf 50 352 Td (Cybersecurity Controls\) compliance.; Content gap: Localized case studies highlighting) Tj ET
+BT /F1 12 Tf 50 328 Td (cybersecurity implementations and threat mitigation for Saudi enterprises.; Content gap: An) Tj ET
+BT /F1 12 Tf 50 304 Td (authoritative comparison guide of local Saudi MSSPs vs. global cybersecurity vendors,) Tj ET
+BT /F1 12 Tf 50 280 Td (positioning OrcaTech as the optimal hybrid choice.; Schema opportunity: Implement) Tj ET
+BT /F1 12 Tf 50 256 Td (Organization Schema with specific 'location' and 'areaServed' properties set to Saudi Arabia) Tj ET
+BT /F1 12 Tf 50 232 Td (\(KSA\).; Schema opportunity: Use Service Schema to define cybersecurity offerings, explicitly) Tj ET
+BT /F1 12 Tf 50 208 Td (linking them to 'NCA compliance' via the 'knowsAbout' property.; Schema opportunity: Apply) Tj ET
+BT /F1 12 Tf 50 184 Td (WebPage Schema with 'about' and 'mentions' pointing to authoritative Wikidata entities like) Tj ET
+BT /F1 12 Tf 50 160 Td (the National Cybersecurity Authority \(NCA\) and Saudi Arabia.; FAQ opportunity: Does OrcaTech) Tj ET
+BT /F1 12 Tf 50 136 Td (comply with Saudi Arabia's National Cybersecurity Authority \(NCA\) regulations?; FAQ) Tj ET
+BT /F1 12 Tf 50 112 Td (opportunity: What are the best managed security service providers \(MSSPs\) in Saudi Arabia) Tj ET
+endstream endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+3141
+%%EOF
