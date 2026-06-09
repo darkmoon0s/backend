@@ -24,6 +24,8 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/database ./database
 COPY --from=builder /app/package.json ./package.json
 
+RUN mkdir -p /app/generated-reports && chown nestjs:nodejs /app/generated-reports
+
 USER nestjs
 EXPOSE 4000
 CMD ["npm", "run", "start:prod"]
